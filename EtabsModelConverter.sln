@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtabsModelConverter", "EtabsModelConverter\EtabsModelConverter.csproj", "{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtabsModelConverterPlugin", "EtabsModelConverterPlugin\EtabsModelConverterPlugin.csproj", "{F226C5CF-2687-4542-A145-C84096119E93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F226C5CF-2687-4542-A145-C84096119E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F226C5CF-2687-4542-A145-C84096119E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F226C5CF-2687-4542-A145-C84096119E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F226C5CF-2687-4542-A145-C84096119E93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

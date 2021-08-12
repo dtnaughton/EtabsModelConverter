@@ -1,0 +1,13 @@
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin.csproj.AssemblyReference.cache
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\MainWindow.g.cs
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin_MarkupCompile.cache
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin_MarkupCompile.lref
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\bin\Debug\EtabsModelConverterPlugin.dll
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\bin\Debug\EtabsModelConverterPlugin.pdb
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\bin\Debug\ETABSv1.dll
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\MainWindow.baml
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin.g.resources
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin.csproj.CoreCompileInputs.cache
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin.csproj.CopyComplete
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin.dll
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\EtabsModelConverterPlugin.pdb
