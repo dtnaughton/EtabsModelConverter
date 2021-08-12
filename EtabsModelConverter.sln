@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtabsModelConverter", "EtabsModelConverter\EtabsModelConverter.csproj", "{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC91642-5D1C-41E7-8EF4-D5FD7458E392}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D81AE422-C605-4FC0-A5B6-353B9B50A165}
+	EndGlobalSection
+EndGlobal

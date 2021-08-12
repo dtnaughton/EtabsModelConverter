@@ -1,0 +1,187 @@
+﻿<Window x:Class="EtabsModelConverter.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EtabsModelConverter.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize" Height="500" Width="325"
+        FontFamily="Helvetica" FontSize="14">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" BorderBrush="LightGray">
+            
+            <!--ULS tab-->
+            <TabItem Header="ULS">
+                <TabControl Margin="0,2,0,0" BorderBrush="LightGray">
+                    <!--Walls-->
+                    <TabItem Header="Walls">
+                        <Grid>
+                            <!--Grid definitions-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="150"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <!--Column 0-->
+                            <Label Grid.Column="0" Grid.Row="0" Content="Section Properties:" Foreground="Blue"/>
+                            <ListView Grid.Column="0" Grid.Row="1" BorderBrush="LightGray" ItemsSource="{Binding IntegerList}"/>
+
+                            <!--Column 1-->
+                            <Label Grid.Column="1" Grid.Row="0" Content="Property Modifiers:" Foreground="Blue"/>
+                            <Grid Grid.Column="1" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="f11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="f22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="f12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="m11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="m22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="m12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="v13" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="7">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="v23" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                    <Grid Grid.Row="9">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75"/>
+                                    </Grid>
+                                </Grid>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                            </Grid>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Slabs"/>
+                    <TabItem Header="Columns"/>
+                    <TabItem Header="Beams"/>
+                </TabControl>
+            </TabItem>
+            
+
+            <!--SLS tab-->
+            <TabItem Header="SLS">
+                <TabControl Margin="0,2,0,0" BorderBrush="LightGray">
+                    <TabItem Header="Walls"/>
+                    <TabItem Header="Slabs"/>
+                    <TabItem Header="Columns"/>
+                    <TabItem Header="Beams"/>
+                </TabControl>
+            </TabItem>
+
+            <!--Create tab-->
+            <TabItem Header="+">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <Label Margin="5" Content="Sync ULS and SLS sections:"/>
+                        <Button Width="100" Margin="5">Sync</Button>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+            
+        </TabControl>
+
+        <!--Apply property modifiers-->
+        
+        <!--ULS and SLS radio buttons-->
+        <StackPanel Grid.Row="1" Height="30"  Orientation="Horizontal" HorizontalAlignment="Right">
+            <RadioButton Content="ULS" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <RadioButton Content="SLS" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <Button Width="100" Margin="3">Apply</Button>
+        </StackPanel>
+    </Grid>
+</Window>
