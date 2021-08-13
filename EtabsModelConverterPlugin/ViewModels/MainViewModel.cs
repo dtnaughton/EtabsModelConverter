@@ -1,22 +1,46 @@
-﻿using EtabsModelConverterPlugin.Models;
+﻿using EtabsModelConverterPlugin.Helpers;
+using EtabsModelConverterPlugin.Models;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace EtabsModelConverterPlugin.ViewModels
 {
-    public class MainViewModel
+    public partial class MainViewModel : ViewModelBase
     {
-        public EtabsAPI ActiveModel { get; set; }
-
         public MainViewModel()
         {
             ActiveModel = new EtabsAPI();
-            string name = "";
-            ActiveModel.SapModel.FrameObj.AddByCoord(0, 0, 0, 3, 3, 3, ref name);
-            
+
+            WallsUls = new ObservableCollection<Wall>();
+            WallsSls = new ObservableCollection<Wall>();
+            SlabsUls = new ObservableCollection<Slab>();
+            SlabsSls = new ObservableCollection<Slab>();
+            DropPanelsUls = new ObservableCollection<DropPanel>();
+            DropPanelsSls = new ObservableCollection<DropPanel>();
+            ColumnsUls = new ObservableCollection<Column>();
+            ColumnsSls = new ObservableCollection<Column>();
+            Beams = new ObservableCollection<Beam>();
+
+            PopulateData();
+        }
+
+        public void PopulateData()
+        {
+            SlabsUls = ObjectFactoryMethods.CreateSlabs(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetSlabNames(ActiveModel), "ULS"));
+            SlabsSls = ObjectFactoryMethods.CreateSlabs(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetSlabNames(ActiveModel), "SLS"));
+            WallsUls = ObjectFactoryMethods.CreateWalls(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetWallNames(ActiveModel), "ULS"));
+            WallsSls = ObjectFactoryMethods.CreateWalls(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetWallNames(ActiveModel), "SLS"));
+            DropPanelsUls = ObjectFactoryMethods.CreateDrops(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetDropNames(ActiveModel), "ULS"));
+            DropPanelsSls = ObjectFactoryMethods.CreateDrops(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetDropNames(ActiveModel), "SLS"));
+            ColumnsUls = ObjectFactoryMethods.CreateColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "ULS"));
+            ColumnsSls = ObjectFactoryMethods.CreateColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "SLS"));
         }
     }
 }

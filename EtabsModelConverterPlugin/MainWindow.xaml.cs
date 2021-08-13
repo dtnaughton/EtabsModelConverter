@@ -1,4 +1,5 @@
-﻿using ETABSv1;
+﻿using EtabsModelConverterPlugin.ViewModels;
+using ETABSv1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,17 +24,21 @@ namespace EtabsModelConverterPlugin
     {
         private cPluginCallback plugin = null;
         private cSapModel sapModel = null;
+        private MainViewModel mainViewModel = new MainViewModel();
+        
 
         public MainWindow(ref cSapModel _sapModel, ref cPluginCallback _plugin)
         {
             sapModel = _sapModel;
             plugin = _plugin;
             InitializeComponent();
+            DataContext = mainViewModel;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             plugin.Finish(0);
+            mainViewModel = null;
         }
     }
 }
