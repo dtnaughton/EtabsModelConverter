@@ -80,5 +80,24 @@ namespace EtabsModelConverterPlugin.Helpers
 
             return columns;
         }
+
+        public static ObservableCollection<Beam> CreateBeams(EtabsAPI activeModel, List<string> beamNames)
+        {
+            var beams = new ObservableCollection<Beam>();
+
+            foreach (var beamName in beamNames)
+            {
+                beams.Add(new Beam()
+                {
+                    PropertyName = beamName,
+                    PropertyModifiers = EtabsMethods.GetFramePropertyModifiers(activeModel, beamName),
+                    Material = EtabsMethods.GetFrameMaterial(activeModel, beamName),
+                    SectionType = SectionType.Beam
+                });
+            }
+
+            return beams;
+        }
+
     }
 }

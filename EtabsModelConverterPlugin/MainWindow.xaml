@@ -497,12 +497,120 @@
                                     </Grid>
 
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyFramePropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Beams"/>
+                    <TabItem Header="Beams">
+                        <Grid>
+                            <!--Grid definitions-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="160"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <!--Column 0-->
+                            <Label Grid.Column="0" Grid.Row="0" Content="Section Properties:" Foreground="Blue"/>
+                            <ListView Grid.Column="0" Grid.Row="1" BorderBrush="LightGray" ItemsSource="{Binding BeamsUls}" DisplayMemberPath="PropertyName" SelectedItem="{Binding SelectedFrame}"/>
+
+                            <!--Column 1-->
+                            <Label Grid.Column="1" Grid.Row="0" Content="Property Modifiers:" Foreground="Blue"/>
+                            <Grid Grid.Column="1" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Area" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Sh. Area 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Sh. Area 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="To. Const." Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Mom. In. 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Mom. In. 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="7">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"/>
+                                    </Grid>
+
+                                </Grid>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" Command="{Binding ApplyFramePropertiesCommand}" HorizontalAlignment="Right">Apply Modifiers</Button>
+                            </Grid>
+
+                        </Grid>
+                    </TabItem>
                 </TabControl>
             </TabItem>
 
@@ -986,12 +1094,123 @@
                                     </Grid>
                                     
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyFramePropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Beams"/>
+                    <TabItem Header="Beams">
+                        <Grid>
+                            <!--Grid definitions-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="160"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <!--Column 0-->
+                            <Label Grid.Column="0" Grid.Row="0" Content="Section Properties:" Foreground="Blue"/>
+                            <ListView Grid.Column="0" Grid.Row="1" BorderBrush="LightGray" ItemsSource="{Binding BeamsSls}" DisplayMemberPath="PropertyName" SelectedItem="{Binding SelectedFrame}"/>
+
+                            <!--Column 1-->
+                            <Label Grid.Column="1" Grid.Row="0" Content="Property Modifiers:" Foreground="Blue"/>
+                            <Grid Grid.Column="1" Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Area" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}" 
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Sh. Area 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Sh. Area 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="To. Const." Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Mom. In. 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Mom. In. 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"/>
+                                    </Grid>
+                                    <Grid Grid.Row="7">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="75"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"/>
+                                    </Grid>
+
+                                </Grid>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyFramePropertiesCommand}">Apply Modifiers</Button>
+                            </Grid>
+
+                        </Grid>
+                    </TabItem>
                 </TabControl>
             </TabItem>
 

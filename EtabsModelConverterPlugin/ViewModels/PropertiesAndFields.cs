@@ -19,7 +19,8 @@ namespace EtabsModelConverterPlugin.ViewModels
         private ObservableCollection<DropPanel> dropPanelsSls;
         private ObservableCollection<Column> columnsUls;
         private ObservableCollection<Column> columnsSls;
-        private ObservableCollection<Beam> beams;
+        private ObservableCollection<Beam> beamsUls;
+        private ObservableCollection<Beam> beamsSls;
         private Shell selectedShell;
         private Frame selectedFrame;
 
@@ -99,16 +100,25 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(ColumnsSls));
             }
         }
-        public ObservableCollection<Beam> Beams
+        public ObservableCollection<Beam> BeamsUls
         {
-            get { return beams; }
+            get { return beamsUls; }
             set
             {
-                beams = value;
-                RaisePropertyChanged(nameof(Beams));
+                beamsUls = value;
+                RaisePropertyChanged(nameof(BeamsUls));
             }
         }
 
+        public ObservableCollection<Beam> BeamsSls
+        {
+            get { return beamsSls; }
+            set
+            {
+                beamsSls = value;
+                RaisePropertyChanged(nameof(BeamsSls));
+            }
+        }
         public Shell SelectedShell
         {
             get { return selectedShell; }

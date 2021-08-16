@@ -26,7 +26,8 @@ namespace EtabsModelConverterPlugin.ViewModels
             DropPanelsSls = new ObservableCollection<DropPanel>();
             ColumnsUls = new ObservableCollection<Column>();
             ColumnsSls = new ObservableCollection<Column>();
-            Beams = new ObservableCollection<Beam>();
+            BeamsUls = new ObservableCollection<Beam>();
+            BeamsSls = new ObservableCollection<Beam>();
 
             PopulateData();
         }
@@ -41,6 +42,8 @@ namespace EtabsModelConverterPlugin.ViewModels
             DropPanelsSls = ObjectFactoryMethods.CreateDrops(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetDropNames(ActiveModel), "SLS"));
             ColumnsUls = ObjectFactoryMethods.CreateColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "ULS"));
             ColumnsSls = ObjectFactoryMethods.CreateColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "SLS"));
+            BeamsUls = ObjectFactoryMethods.CreateBeams(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetBeamNames(ActiveModel), "ULS"));
+            BeamsSls = ObjectFactoryMethods.CreateBeams(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetBeamNames(ActiveModel), "SLS"));
         }
     }
 }
