@@ -13,5 +13,6 @@ namespace EtabsModelConverterPlugin.Models
         public SectionType SectionType { get; set; }
         public ShellPropertyModifiers PropertyModifiers { get; set; }
         public IMaterial Material { get; set; }
+        public double Thickness { get; set; }
     }
 }

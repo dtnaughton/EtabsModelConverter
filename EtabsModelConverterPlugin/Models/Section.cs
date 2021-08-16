@@ -7,7 +7,15 @@ using System.Threading.Tasks;
 
 namespace EtabsModelConverterPlugin.Models
 {
-    public class Section : ObservableObject
+    public class Section : ObservableObject, ISection
     {
+        public string PropertyName { get; set; }
+
+        public string GetSectionName(string fullName)
+        {
+            string[] words = fullName.Split('-');
+
+            return words.First();
+        }
     }
 }

@@ -18,16 +18,17 @@ namespace EtabsModelConverterPlugin.ViewModels
         {
             ActiveModel = new EtabsAPI();
 
-            WallsUls = new ObservableCollection<Wall>();
-            WallsSls = new ObservableCollection<Wall>();
+            WallsUls = new ObservableCollection<Shell>();
+            WallsSls = new ObservableCollection<Shell>();
             SlabsUls = new ObservableCollection<Slab>();
             SlabsSls = new ObservableCollection<Slab>();
             DropPanelsUls = new ObservableCollection<DropPanel>();
             DropPanelsSls = new ObservableCollection<DropPanel>();
-            ColumnsUls = new ObservableCollection<Column>();
-            ColumnsSls = new ObservableCollection<Column>();
+            ColumnsUls = new ObservableCollection<Section>();
+            ColumnsSls = new ObservableCollection<Section>();
             BeamsUls = new ObservableCollection<Beam>();
             BeamsSls = new ObservableCollection<Beam>();
+            
 
             PopulateData();
         }
@@ -44,6 +45,8 @@ namespace EtabsModelConverterPlugin.ViewModels
             ColumnsSls = ObjectFactoryMethods.CreateColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "SLS"));
             BeamsUls = ObjectFactoryMethods.CreateBeams(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetBeamNames(ActiveModel), "ULS"));
             BeamsSls = ObjectFactoryMethods.CreateBeams(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetBeamNames(ActiveModel), "SLS"));
+            IsULS = EtabsMethods.AreUlsPropertiesApplied(ActiveModel);
+            IsSLS = !IsULS;
         }
     }
 }

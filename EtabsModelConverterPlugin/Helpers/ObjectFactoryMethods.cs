@@ -14,14 +14,15 @@ namespace EtabsModelConverterPlugin.Helpers
         {
             var slabs = new ObservableCollection<Slab>();
 
-            foreach(var slabName in slabNames)
+            foreach (var slabName in slabNames)
             {
                 slabs.Add(new Slab()
                 {
                     PropertyName = slabName,
                     PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, slabName),
-                    Material = EtabsMethods.GetShellMaterial(activeModel, slabName),
-                    SectionType = SectionType.Slab
+                    Material = EtabsMethods.GetSlabMaterial(activeModel, slabName),
+                    SectionType = SectionType.Slab,
+                    Thickness = EtabsMethods.GetSlabThickness(activeModel, slabName)
                 });
             }
 
@@ -37,48 +38,60 @@ namespace EtabsModelConverterPlugin.Helpers
                 {
                     PropertyName = dropName,
                     PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, dropName),
-                    Material = EtabsMethods.GetShellMaterial(activeModel, dropName),
-                    SectionType = SectionType.Drop
+                    Material = EtabsMethods.GetSlabMaterial(activeModel, dropName),
+                    SectionType = SectionType.Drop,
+                    Thickness = EtabsMethods.GetSlabThickness(activeModel, dropName)
                 });
             }
 
             return drops;
         }
 
-        public static ObservableCollection<Wall> CreateWalls(EtabsAPI activeModel, List<string> wallNames)
+        public static ObservableCollection<Shell> CreateWalls(EtabsAPI activeModel, List<string> wallNames)
         {
-            var walls = new ObservableCollection<Wall>();
+            var walls = new ObservableCollection<Shell>();
 
             foreach (var wallName in wallNames)
             {
-                walls.Add(new Wall()
-                {
-                    PropertyName = wallName,
-                    PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, wallName),
-                    Material = EtabsMethods.GetShellMaterial(activeModel, wallName),
-                    SectionType = SectionType.Wall
-                });
+                walls.Add(CreateWall(activeModel, wallName));
             }
 
             return walls;
         }
 
-        public static ObservableCollection<Column> CreateColumns(EtabsAPI activeModel, List<string> columnNames)
+        public static Shell CreateWall(EtabsAPI activeModel, string wallName)
         {
-            var columns = new ObservableCollection<Column>();
-
-            foreach(var columnName in columnNames)
+            return new Wall()
             {
-                columns.Add(new Column()
-                {
-                    PropertyName = columnName,
-                    PropertyModifiers = EtabsMethods.GetFramePropertyModifiers(activeModel, columnName),
-                    Material = EtabsMethods.GetFrameMaterial(activeModel, columnName),
-                    SectionType = SectionType.Column
-                });
+                PropertyName = wallName,
+                PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, wallName),
+                Material = EtabsMethods.GetWallMaterial(activeModel, wallName),
+                SectionType = SectionType.Wall,
+                Thickness = EtabsMethods.GetWallThickness(activeModel, wallName)
+            };
+        }
+
+        public static ObservableCollection<Section> CreateColumns(EtabsAPI activeModel, List<string> columnNames)
+        {
+            var columns = new ObservableCollection<Section>();
+
+            foreach (var columnName in columnNames)
+            {
+                columns.Add(CreateColumn(activeModel, columnName));
             }
 
             return columns;
+        }
+
+        public static Section CreateColumn(EtabsAPI activeModel, string columnName)
+        {
+            return new Column()
+            {
+                PropertyName = columnName,
+                PropertyModifiers = EtabsMethods.GetFramePropertyModifiers(activeModel, columnName),
+                Material = EtabsMethods.GetFrameMaterial(activeModel, columnName),
+                SectionType = SectionType.Column
+            };
         }
 
         public static ObservableCollection<Beam> CreateBeams(EtabsAPI activeModel, List<string> beamNames)
@@ -99,5 +112,26 @@ namespace EtabsModelConverterPlugin.Helpers
             return beams;
         }
 
+        public static bool ElementSynced(Section section, ObservableCollection<Section> listOfSections)
+        {
+
+            string sectionName = section.GetSectionName(section.PropertyName);
+
+            var matches = listOfSections.Where(w => w.PropertyName == sectionName);
+
+            return matches.Count() > 0;
+
+        }
+
+        public static bool ElementSynced(Shell section, ObservableCollection<Shell> listOfSections)
+        {
+
+            string sectionName = section.GetSectionName(section.PropertyName);
+
+            var matches = listOfSections.Where(w => w.PropertyName == sectionName);
+
+            return matches.Count() > 0;
+
+        }
     }
 }

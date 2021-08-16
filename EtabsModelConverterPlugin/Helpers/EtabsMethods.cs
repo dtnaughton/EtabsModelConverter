@@ -2,6 +2,7 @@
 using ETABSv1;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -172,7 +173,7 @@ namespace EtabsModelConverterPlugin.Helpers
                 Weight = propertyModifiers[7],
             };
         }
-        public static IMaterial GetShellMaterial(EtabsAPI activeModel, string shellName)
+        public static IMaterial GetSlabMaterial(EtabsAPI activeModel, string shellName)
         {
             eSlabType slabType = new eSlabType();
             eShellType shellType = new eShellType();
@@ -186,6 +187,20 @@ namespace EtabsModelConverterPlugin.Helpers
 
             return new ConcreteMaterial() { Name = materialPropertyName };
         }
+        public static IMaterial GetWallMaterial(EtabsAPI activeModel, string shellName)
+        {
+            eWallPropType wallType = new eWallPropType();
+            eShellType shellType = new eShellType();
+            string materialPropertyName = "";
+            double materialThickness = 0;
+            int materialColor = 0;
+            string notes = "";
+            string gUID = "";
+
+            activeModel.SapModel.PropArea.GetWall(shellName, ref wallType, ref shellType, ref materialPropertyName, ref materialThickness, ref materialColor, ref notes, ref gUID);
+
+            return new ConcreteMaterial() { Name = materialPropertyName };
+        }
 
         public static IMaterial GetFrameMaterial(EtabsAPI activeModel, string frameName)
         {
@@ -194,6 +209,36 @@ namespace EtabsModelConverterPlugin.Helpers
             activeModel.SapModel.PropFrame.GetMaterial(frameName, ref materialPropertyName);
 
             return new ConcreteMaterial() { Name = materialPropertyName };
+        }
+
+        public static double GetSlabThickness(EtabsAPI activeModel, string shellName)
+        {
+            eSlabType slabType = new eSlabType();
+            eShellType shellType = new eShellType();
+            string materialPropertyName = "";
+            double materialThickness = 0;
+            int materialColor = 0;
+            string notes = "";
+            string gUID = "";
+
+            activeModel.SapModel.PropArea.GetSlab(shellName, ref slabType, ref shellType, ref materialPropertyName, ref materialThickness, ref materialColor, ref notes, ref gUID);
+
+            return materialThickness;
+        }
+
+        public static double GetWallThickness(EtabsAPI activeModel, string shellName)
+        {
+            eWallPropType wallType = new eWallPropType();
+            eShellType shellType = new eShellType();
+            string materialPropertyName = "";
+            double materialThickness = 0;
+            int materialColor = 0;
+            string notes = "";
+            string gUID = "";
+
+            activeModel.SapModel.PropArea.GetWall(shellName, ref wallType, ref shellType, ref materialPropertyName, ref materialThickness, ref materialColor, ref notes, ref gUID);
+
+            return materialThickness;
         }
 
         public static bool IsPropertyULS(string name)
@@ -257,5 +302,56 @@ namespace EtabsModelConverterPlugin.Helpers
 
             return wallType == eWallPropType.AutoSelectList || wallType == eWallPropType.Specified;
         }
+
+        public static bool AreUlsPropertiesApplied(EtabsAPI activeModel)
+        {
+            int numberOfAreas, numberOfBoundaryPts;
+            string[] areaNames, pointNames;
+            eAreaDesignOrientation[] designOrientation = new eAreaDesignOrientation[1];
+            int[] pointDelimiter;
+            double[] pointX, pointY, pointZ;
+
+            numberOfAreas = numberOfBoundaryPts = 0;
+            areaNames = pointNames = new string[1];
+            pointDelimiter = new int[1];
+            pointX = pointY = pointZ = new double[1];
+
+            activeModel.SapModel.AreaObj.GetAllAreas(ref numberOfAreas, ref areaNames, ref designOrientation, ref numberOfBoundaryPts, ref pointDelimiter, ref pointNames, ref pointX, ref pointY, ref pointZ);
+
+
+
+            if(numberOfAreas > 0)
+            {
+                string propName = "";
+
+                activeModel.SapModel.AreaObj.GetProperty(areaNames[0], ref propName);
+
+                return IsPropertyULS(propName);
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+        public static void CreateWallElementInETABS(EtabsAPI activeModel, ObservableCollection<Shell> wallsToAdd)
+        {
+            foreach(var wall in wallsToAdd)
+            {
+                activeModel.SapModel.PropArea.SetWall(wall.PropertyName, eWallPropType.AutoSelectList, eShellType.ShellThin, wall.Material.Name, wall.Thickness);
+            }
+        }
+
+        public static void CreateFrameElementInETABS(EtabsAPI activeModel, List<Frame> framesToAdd)
+        {
+            foreach(var frame in framesToAdd)
+            {
+
+            }
+        }
     }
 }
+

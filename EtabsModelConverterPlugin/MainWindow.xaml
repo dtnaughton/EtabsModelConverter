@@ -65,7 +65,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -73,7 +76,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -81,7 +87,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -89,7 +98,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -97,7 +109,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -105,7 +120,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -113,7 +131,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v13" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -121,7 +142,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v23" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="8">
                                         <Grid.ColumnDefinitions>
@@ -129,7 +153,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="9">
                                         <Grid.ColumnDefinitions>
@@ -137,7 +164,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
                                 <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
@@ -189,7 +219,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -197,7 +230,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -205,7 +241,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -213,7 +252,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -221,7 +263,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -229,7 +274,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -237,7 +285,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v13" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -245,7 +296,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v23" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="8">
                                         <Grid.ColumnDefinitions>
@@ -253,7 +307,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="9">
                                         <Grid.ColumnDefinitions>
@@ -261,7 +318,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
                                 <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
@@ -313,7 +373,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -321,7 +384,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -329,7 +395,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -337,7 +406,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -345,7 +417,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -353,7 +428,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -361,7 +439,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v13" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -369,7 +450,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v23" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="8">
                                         <Grid.ColumnDefinitions>
@@ -377,7 +461,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="9">
                                         <Grid.ColumnDefinitions>
@@ -385,7 +472,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
                                 <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
@@ -437,7 +527,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Area" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -445,7 +538,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -453,7 +549,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -461,7 +560,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="To. Const." Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -469,7 +571,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -477,7 +582,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -485,7 +593,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -493,7 +604,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
 
                                 </Grid>
@@ -546,7 +660,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Area" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -554,7 +671,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -562,7 +682,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -570,7 +693,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="To. Const." Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -578,7 +704,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -586,7 +715,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -594,7 +726,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -602,7 +737,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
 
                                 </Grid>
@@ -662,7 +800,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -670,7 +811,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -678,7 +822,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -686,7 +833,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -694,7 +844,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -702,7 +855,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -710,7 +866,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v13" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -718,7 +877,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v23" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="8">
                                         <Grid.ColumnDefinitions>
@@ -726,7 +888,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="9">
                                         <Grid.ColumnDefinitions>
@@ -734,7 +899,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
                                 <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
@@ -786,7 +954,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -794,7 +965,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -802,7 +976,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -810,7 +987,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -818,7 +998,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -826,7 +1009,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -834,7 +1020,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v13" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -842,7 +1031,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v23" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="8">
                                         <Grid.ColumnDefinitions>
@@ -850,7 +1042,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="9">
                                         <Grid.ColumnDefinitions>
@@ -858,7 +1053,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
                                 <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
@@ -910,7 +1108,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -918,7 +1119,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -926,7 +1130,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="f12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.F12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -934,7 +1141,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m11" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M11}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -942,7 +1152,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m22" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M22}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -950,7 +1163,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="m12" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.M12}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -958,7 +1174,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v13" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V13}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -966,7 +1185,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="v23" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.V23}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="8">
                                         <Grid.ColumnDefinitions>
@@ -974,7 +1196,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="9">
                                         <Grid.ColumnDefinitions>
@@ -982,7 +1207,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedShell.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
                                 <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
@@ -1034,7 +1262,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Area" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.CrossSectionalArea}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
@@ -1042,7 +1273,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -1050,7 +1284,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -1058,7 +1295,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="To. Const." Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -1066,7 +1306,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -1074,7 +1317,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -1082,7 +1328,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -1090,7 +1339,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     
                                 </Grid>
@@ -1154,7 +1406,10 @@
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea2Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.ColumnDefinitions>
@@ -1162,7 +1417,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Sh. Area 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.ShearArea3Direction}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="3">
                                         <Grid.ColumnDefinitions>
@@ -1170,7 +1428,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="To. Const." Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.TorsionalConstant}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="4">
                                         <Grid.ColumnDefinitions>
@@ -1178,7 +1439,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 2" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout2}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="5">
                                         <Grid.ColumnDefinitions>
@@ -1186,7 +1450,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mom. In. 3" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.MomentOfInertiaAbout3}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="6">
                                         <Grid.ColumnDefinitions>
@@ -1194,7 +1461,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Mass" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Mass}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                     <Grid Grid.Row="7">
                                         <Grid.ColumnDefinitions>
@@ -1202,7 +1472,10 @@
                                             <ColumnDefinition Width="75"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Grid.Column="0" Text="Weight" Margin="0,5,10,5" HorizontalAlignment="Right"/>
-                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"/>
+                                        <TextBox Grid.Column="1" Margin="0,5,0,5" TextAlignment="Center" Width="75" Text="{Binding SelectedFrame.PropertyModifiers.Weight}"
+                                                 MouseDoubleClick="SelectAddress"
+                                                 GotKeyboardFocus="SelectAddress"
+                                                 PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
 
                                 </Grid>
@@ -1222,7 +1495,7 @@
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
                         <Label Margin="5" Content="Sync ULS and SLS sections:"/>
-                        <Button Width="100" Margin="5">Sync</Button>
+                        <Button Width="100" Margin="5" Command="{Binding SyncPropertiesCommand}">Sync</Button>
                     </StackPanel>
 
                 </Grid>
@@ -1234,8 +1507,8 @@
 
         <!--ULS and SLS radio buttons-->
         <StackPanel Grid.Row="1" Height="30"  Orientation="Horizontal" HorizontalAlignment="Right">
-            <RadioButton Content="ULS" VerticalAlignment="Center" Margin="0,0,20,0"/>
-            <RadioButton Content="SLS" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <RadioButton Content="ULS" VerticalAlignment="Center" Margin="0,0,20,0" IsChecked="{Binding IsULS}"/>
+            <RadioButton Content="SLS" VerticalAlignment="Center" Margin="0,0,20,0" IsChecked="{Binding IsSLS}"/>
             <Button Width="100" Margin="3">Apply</Button>
         </StackPanel>
     </Grid>

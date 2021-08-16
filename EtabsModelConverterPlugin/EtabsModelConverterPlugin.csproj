@@ -82,6 +82,7 @@
     <Compile Include="Models\FramePropertyModifiers.cs" />
     <Compile Include="Models\IMaterial.cs" />
     <Compile Include="Models\IPropertyModifiers.cs" />
+    <Compile Include="Models\ISection.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\Shell.cs" />
     <Compile Include="Models\ShellPropertyModifiers.cs" />

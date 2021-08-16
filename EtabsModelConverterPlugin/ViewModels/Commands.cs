@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using EtabsModelConverterPlugin.Helpers;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,35 @@ namespace EtabsModelConverterPlugin.ViewModels
         public ICommand ApplyFramePropertiesCommand
         {
             get { return new RelayCommand(ApplyFrameProperties, true); }
+        }
+
+        // Add ApplyShellPropertiesCommand
+
+        public ICommand SyncPropertiesCommand
+        {
+            get { return new RelayCommand(SyncProperties, true); }
+        }
+
+        private void SyncProperties()
+        {
+            foreach(var columnULS in ColumnsUls)
+            {
+                if (!ObjectFactoryMethods.ElementSynced(columnULS, ColumnsSls))
+                {
+                    ColumnsSls.Add(ObjectFactoryMethods.CreateColumn(ActiveModel, columnULS.PropertyName));
+                }
+            }
+
+            foreach(var wallULS in WallsUls)
+            {
+                if(!ObjectFactoryMethods.ElementSynced(wallULS, WallsSls))
+                {
+                    WallsSls.Add(ObjectFactoryMethods.CreateWall(ActiveModel, wallULS.PropertyName));
+                }
+            }
+
+            EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsSls);
+            
         }
 
         private void ApplyFrameProperties()

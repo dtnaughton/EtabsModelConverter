@@ -10,18 +10,9 @@ namespace EtabsModelConverterPlugin.Models
 {
     public class Frame : Section
     {
-        private FramePropertyModifiers propertyModifiers;
         public string PropertyName { get; set; }
         public SectionType SectionType { get; set; }
-        public FramePropertyModifiers PropertyModifiers
-        {
-            get { return propertyModifiers; }
-            set
-            {
-                propertyModifiers = value;
-                RaisePropertyChanged(nameof(PropertyModifiers));
-            }
-        }
+        public FramePropertyModifiers PropertyModifiers { get; set; }
                 
         public IMaterial Material { get; set; }
     }

@@ -11,14 +11,14 @@ namespace EtabsModelConverterPlugin.ViewModels
 {
     partial class MainViewModel : ViewModelBase
     {
-        private ObservableCollection<Wall> wallsUls;
-        private ObservableCollection<Wall> wallsSls;
+        private ObservableCollection<Shell> wallsUls;
+        private ObservableCollection<Shell> wallsSls;
         private ObservableCollection<Slab> slabsUls;
         private ObservableCollection<Slab> slabsSls;
         private ObservableCollection<DropPanel> dropPanelsUls;
         private ObservableCollection<DropPanel> dropPanelsSls;
-        private ObservableCollection<Column> columnsUls;
-        private ObservableCollection<Column> columnsSls;
+        private ObservableCollection<Section> columnsUls;
+        private ObservableCollection<Section> columnsSls;
         private ObservableCollection<Beam> beamsUls;
         private ObservableCollection<Beam> beamsSls;
         private Shell selectedShell;
@@ -26,7 +26,7 @@ namespace EtabsModelConverterPlugin.ViewModels
 
 
         public EtabsAPI ActiveModel { get; set; }
-        public ObservableCollection<Wall> WallsUls
+        public ObservableCollection<Shell> WallsUls
         {
             get { return wallsUls; }
             set
@@ -35,7 +35,7 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(WallsUls));
             }
         }
-        public ObservableCollection<Wall> WallsSls
+        public ObservableCollection<Shell> WallsSls
         {
             get { return wallsSls; }
             set
@@ -82,7 +82,7 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(DropPanelsSls));
             }
         }
-        public ObservableCollection<Column> ColumnsUls
+        public ObservableCollection<Section> ColumnsUls
         {
             get { return columnsUls; }
             set
@@ -91,7 +91,7 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(ColumnsUls));
             }
         }
-        public ObservableCollection<Column> ColumnsSls
+        public ObservableCollection<Section> ColumnsSls
         {
             get { return columnsSls; }
             set
@@ -138,5 +138,32 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(SelectedFrame));
             }
         }
+
+        private bool isULS;
+
+        public bool IsULS
+        {
+            get { return isULS; }
+            set 
+            { 
+                isULS = value;
+                RaisePropertyChanged(nameof(IsULS));
+            }
+        }
+
+        private bool isSLS;
+
+        public bool IsSLS
+        {
+            get { return isSLS; }
+            set 
+            { 
+                isSLS = value;
+                RaisePropertyChanged(nameof(IsSLS));
+            }
+        }
+
+
+
     }
 }
