@@ -173,6 +173,7 @@ namespace EtabsModelConverterPlugin.Helpers
                 Weight = propertyModifiers[7],
             };
         }
+
         public static IMaterial GetSlabMaterial(EtabsAPI activeModel, string shellName)
         {
             eSlabType slabType = new eSlabType();
@@ -337,7 +338,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
 
 
-        public static void CreateWallElementInETABS(EtabsAPI activeModel, ObservableCollection<Shell> wallsToAdd)
+        public static void CreateWallElementInETABS(EtabsAPI activeModel, ObservableCollection<Wall> wallsToAdd)
         {
             foreach(var wall in wallsToAdd)
             {

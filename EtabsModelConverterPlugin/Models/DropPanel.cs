@@ -8,5 +8,10 @@ namespace EtabsModelConverterPlugin.Models
 {
     public class DropPanel : Shell 
     {
+        public DropPanel(string propertyName, ShellPropertyModifiers shellPropertyModifiers, IMaterial material, double thickness)
+    : base(propertyName, shellPropertyModifiers, material, thickness)
+        {
+            SectionType = SectionType.Drop;
+        }
     }
 }

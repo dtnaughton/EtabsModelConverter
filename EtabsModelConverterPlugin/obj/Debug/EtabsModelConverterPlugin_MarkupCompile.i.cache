@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\
+C:\Users\naugh\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Debug\
 EtabsModelConverterPlugin
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 11151548125
 
-251708022537
-127-989912282
+272091714679
+127-508052275
 MainWindow.xaml;
 
-True
+False
 

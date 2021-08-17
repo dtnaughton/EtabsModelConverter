@@ -8,5 +8,10 @@ namespace EtabsModelConverterPlugin.Models
 {
     public class Slab : Shell
     {
+        public Slab(string propertyName, ShellPropertyModifiers shellPropertyModifiers, IMaterial material, double thickness) 
+            : base(propertyName, shellPropertyModifiers, material, thickness)
+        {
+            SectionType = SectionType.Slab;
+        }
     }
 }

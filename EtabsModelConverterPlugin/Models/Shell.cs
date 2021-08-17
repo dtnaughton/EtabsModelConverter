@@ -7,12 +7,17 @@ using System.Threading.Tasks;
 
 namespace EtabsModelConverterPlugin.Models
 {
-    public class Shell : Section
+    public class Shell : Section, IShell
     {
-        public string PropertyName { get; set; }
-        public SectionType SectionType { get; set; }
         public ShellPropertyModifiers PropertyModifiers { get; set; }
-        public IMaterial Material { get; set; }
         public double Thickness { get; set; }
+
+        public Shell(string propertyName, ShellPropertyModifiers shellPropertyModifiers, IMaterial material, double thickness)
+        {
+            PropertyName = propertyName;
+            PropertyModifiers = shellPropertyModifiers;
+            Material = material;
+            Thickness = thickness;
+        }
     }
 }

@@ -80,9 +80,11 @@
     <Compile Include="Models\EtabsAPI.cs" />
     <Compile Include="Models\Frame.cs" />
     <Compile Include="Models\FramePropertyModifiers.cs" />
+    <Compile Include="Models\IFrame.cs" />
     <Compile Include="Models\IMaterial.cs" />
     <Compile Include="Models\IPropertyModifiers.cs" />
     <Compile Include="Models\ISection.cs" />
+    <Compile Include="Models\IShell.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\Shell.cs" />
     <Compile Include="Models\ShellPropertyModifiers.cs" />

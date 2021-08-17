@@ -3,6 +3,9 @@
     public interface ISection
     {
         string PropertyName { get; set; }
-        string GetSectionName(string fullName);
+        SectionType SectionType { get; set; }
+        IMaterial Material { get; set; }
+        string StripSectionName(string fullName);
+        string AppendSectionName(string originalName, string textToAppend);
     }
 }

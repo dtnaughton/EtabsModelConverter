@@ -8,6 +8,10 @@ namespace EtabsModelConverterPlugin.Models
 {
     public class Wall : Shell
     {
-
+        public Wall(string propertyName, ShellPropertyModifiers shellPropertyModifiers, IMaterial material, double thickness)
+            : base(propertyName, shellPropertyModifiers, material, thickness)
+        {
+            SectionType = SectionType.Wall;
+        }
     }
 }

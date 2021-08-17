@@ -1,4 +1,5 @@
 ﻿using EtabsModelConverterPlugin.Helpers;
+using EtabsModelConverterPlugin.Models;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
@@ -21,6 +22,7 @@ namespace EtabsModelConverterPlugin.ViewModels
         }
 
         // Add ApplyShellPropertiesCommand
+        // Remove hardcode of shell type and add dynamically
 
         public ICommand SyncPropertiesCommand
         {
@@ -29,24 +31,26 @@ namespace EtabsModelConverterPlugin.ViewModels
 
         private void SyncProperties()
         {
-            foreach(var columnULS in ColumnsUls)
+            foreach (var wallULS in WallsUls)
             {
-                if (!ObjectFactoryMethods.ElementSynced(columnULS, ColumnsSls))
+                if (!ObjectFactoryMethods.WallsSynced(wallULS, WallsSls))
                 {
-                    ColumnsSls.Add(ObjectFactoryMethods.CreateColumn(ActiveModel, columnULS.PropertyName));
+                    wallULS.PropertyName = wallULS.AppendSectionName(wallULS.PropertyName, "-SLS");
+                    WallsSls.Add(wallULS);
                 }
             }
-
-            foreach(var wallULS in WallsUls)
-            {
-                if(!ObjectFactoryMethods.ElementSynced(wallULS, WallsSls))
-                {
-                    WallsSls.Add(ObjectFactoryMethods.CreateWall(ActiveModel, wallULS.PropertyName));
-                }
-            }
-
             EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsSls);
-            
+
+            foreach (var wallSLS in WallsSls)
+            {
+                if (!ObjectFactoryMethods.WallsSynced(wallSLS, WallsUls))
+                {
+                    wallSLS.PropertyName = wallSLS.AppendSectionName(wallSLS.PropertyName, "-ULS");
+                    WallsUls.Add(wallSLS);
+                }
+            }
+            EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsUls);
+
         }
 
         private void ApplyFrameProperties()

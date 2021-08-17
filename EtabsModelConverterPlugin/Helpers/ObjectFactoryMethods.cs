@@ -10,70 +10,68 @@ namespace EtabsModelConverterPlugin.Helpers
 {
     public class ObjectFactoryMethods
     {
-        public static ObservableCollection<Slab> CreateSlabs(EtabsAPI activeModel, List<string> slabNames)
+        public static ObservableCollection<Slab> CreateMultipleSlabs(EtabsAPI activeModel, List<string> slabNames)
         {
             var slabs = new ObservableCollection<Slab>();
 
             foreach (var slabName in slabNames)
             {
-                slabs.Add(new Slab()
-                {
-                    PropertyName = slabName,
-                    PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, slabName),
-                    Material = EtabsMethods.GetSlabMaterial(activeModel, slabName),
-                    SectionType = SectionType.Slab,
-                    Thickness = EtabsMethods.GetSlabThickness(activeModel, slabName)
-                });
+                slabs.Add(new Slab(
+                    slabName,
+                    EtabsMethods.GetShellPropertyModifiers(activeModel, slabName),
+                    EtabsMethods.GetSlabMaterial(activeModel, slabName),
+                    EtabsMethods.GetSlabThickness(activeModel, slabName)));
             }
 
             return slabs;
         }
-        public static ObservableCollection<DropPanel> CreateDrops(EtabsAPI activeModel, List<string> dropNames)
+        public static ObservableCollection<DropPanel> CreateMultipleDropPanels(EtabsAPI activeModel, List<string> dropNames)
         {
             var drops = new ObservableCollection<DropPanel>();
 
             foreach (var dropName in dropNames)
             {
-                drops.Add(new DropPanel()
-                {
-                    PropertyName = dropName,
-                    PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, dropName),
-                    Material = EtabsMethods.GetSlabMaterial(activeModel, dropName),
-                    SectionType = SectionType.Drop,
-                    Thickness = EtabsMethods.GetSlabThickness(activeModel, dropName)
-                });
+                drops.Add(new DropPanel(
+                    dropName,
+                    EtabsMethods.GetShellPropertyModifiers(activeModel, dropName),
+                    EtabsMethods.GetSlabMaterial(activeModel, dropName),
+                    EtabsMethods.GetSlabThickness(activeModel, dropName)));
             }
-
+        
             return drops;
         }
 
-        public static ObservableCollection<Shell> CreateWalls(EtabsAPI activeModel, List<string> wallNames)
+        public static ObservableCollection<Wall> CreateMultipleWalls(EtabsAPI activeModel, List<string> wallNames)
         {
-            var walls = new ObservableCollection<Shell>();
+            var walls = new ObservableCollection<Wall>();
 
             foreach (var wallName in wallNames)
             {
-                walls.Add(CreateWall(activeModel, wallName));
+                walls.Add(new Wall(
+                    wallName,
+                    EtabsMethods.GetShellPropertyModifiers(activeModel, wallName),
+                    EtabsMethods.GetSlabMaterial(activeModel, wallName),
+                    EtabsMethods.GetSlabThickness(activeModel, wallName)));
             }
 
             return walls;
         }
 
-        public static Shell CreateWall(EtabsAPI activeModel, string wallName)
-        {
-            return new Wall()
-            {
-                PropertyName = wallName,
-                PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, wallName),
-                Material = EtabsMethods.GetWallMaterial(activeModel, wallName),
-                SectionType = SectionType.Wall,
-                Thickness = EtabsMethods.GetWallThickness(activeModel, wallName)
-            };
-        }
+        //public static Shell CreateWall(EtabsAPI activeModel, string wallName)
+        //{
+        //    return new Wall()
+        //    {
+        //        PropertyName = wallName,
+        //        PropertyModifiers = EtabsMethods.GetShellPropertyModifiers(activeModel, wallName),
+        //        Material = EtabsMethods.GetWallMaterial(activeModel, wallName),
+        //        SectionType = SectionType.Wall,
+        //        Thickness = EtabsMethods.GetWallThickness(activeModel, wallName)
+        //    };
+        //}
 
-        public static ObservableCollection<Section> CreateColumns(EtabsAPI activeModel, List<string> columnNames)
+        public static ObservableCollection<Column> CreateColumns(EtabsAPI activeModel, List<string> columnNames)
         {
-            var columns = new ObservableCollection<Section>();
+            var columns = new ObservableCollection<Column>();
 
             foreach (var columnName in columnNames)
             {
@@ -83,7 +81,7 @@ namespace EtabsModelConverterPlugin.Helpers
             return columns;
         }
 
-        public static Section CreateColumn(EtabsAPI activeModel, string columnName)
+        public static Column CreateColumn(EtabsAPI activeModel, string columnName)
         {
             return new Column()
             {
@@ -112,26 +110,18 @@ namespace EtabsModelConverterPlugin.Helpers
             return beams;
         }
 
-        public static bool ElementSynced(Section section, ObservableCollection<Section> listOfSections)
+        public static bool WallsSynced(Wall wall, ObservableCollection<Wall> listOfWalls)
         {
+            if(listOfWalls != null)
+            {
+                string sectionName = wall.StripSectionName(wall.PropertyName);
 
-            string sectionName = section.GetSectionName(section.PropertyName);
+                var matches = listOfWalls.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
 
-            var matches = listOfSections.Where(w => w.PropertyName == sectionName);
+                return matches.Count() > 0;
+            }
 
-            return matches.Count() > 0;
-
-        }
-
-        public static bool ElementSynced(Shell section, ObservableCollection<Shell> listOfSections)
-        {
-
-            string sectionName = section.GetSectionName(section.PropertyName);
-
-            var matches = listOfSections.Where(w => w.PropertyName == sectionName);
-
-            return matches.Count() > 0;
-
+            return true;
         }
     }
 }

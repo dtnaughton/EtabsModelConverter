@@ -7,11 +7,23 @@ using System.Threading.Tasks;
 
 namespace EtabsModelConverterPlugin.Models
 {
-    public class Section : ObservableObject, ISection
+    public class Section : ISection
     {
         public string PropertyName { get; set; }
+        public SectionType SectionType { get; set; }
+        public IMaterial Material { get; set; }
 
-        public string GetSectionName(string fullName)
+        public string AppendSectionName(string originalName, string textToAppend)
+        {
+            return StripSectionName(originalName) + textToAppend;
+        }
+
+        /// <summary>
+        /// Strips section name of "-ULS" or "-SLS"
+        /// </summary>
+        /// <param name="fullName"></param>
+        /// <returns></returns>
+        public string StripSectionName(string fullName)
         {
             string[] words = fullName.Split('-');
 

@@ -11,14 +11,14 @@ namespace EtabsModelConverterPlugin.ViewModels
 {
     partial class MainViewModel : ViewModelBase
     {
-        private ObservableCollection<Shell> wallsUls;
-        private ObservableCollection<Shell> wallsSls;
+        private ObservableCollection<Wall> wallsUls;
+        private ObservableCollection<Wall> wallsSls;
         private ObservableCollection<Slab> slabsUls;
         private ObservableCollection<Slab> slabsSls;
         private ObservableCollection<DropPanel> dropPanelsUls;
         private ObservableCollection<DropPanel> dropPanelsSls;
-        private ObservableCollection<Section> columnsUls;
-        private ObservableCollection<Section> columnsSls;
+        private ObservableCollection<Column> columnsUls;
+        private ObservableCollection<Column> columnsSls;
         private ObservableCollection<Beam> beamsUls;
         private ObservableCollection<Beam> beamsSls;
         private Shell selectedShell;
@@ -26,7 +26,7 @@ namespace EtabsModelConverterPlugin.ViewModels
 
 
         public EtabsAPI ActiveModel { get; set; }
-        public ObservableCollection<Shell> WallsUls
+        public ObservableCollection<Wall> WallsUls
         {
             get { return wallsUls; }
             set
@@ -35,7 +35,7 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(WallsUls));
             }
         }
-        public ObservableCollection<Shell> WallsSls
+        public ObservableCollection<Wall> WallsSls
         {
             get { return wallsSls; }
             set
@@ -82,7 +82,7 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(DropPanelsSls));
             }
         }
-        public ObservableCollection<Section> ColumnsUls
+        public ObservableCollection<Column> ColumnsUls
         {
             get { return columnsUls; }
             set
@@ -91,7 +91,7 @@ namespace EtabsModelConverterPlugin.ViewModels
                 RaisePropertyChanged(nameof(ColumnsUls));
             }
         }
-        public ObservableCollection<Section> ColumnsSls
+        public ObservableCollection<Column> ColumnsSls
         {
             get { return columnsSls; }
             set
