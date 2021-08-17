@@ -21,7 +21,11 @@ namespace EtabsModelConverterPlugin.ViewModels
             get { return new RelayCommand(ApplyFrameProperties, true); }
         }
 
-        // Add ApplyShellPropertiesCommand
+        public ICommand ApplyShellPropertiesCommand
+        {
+            get { return new RelayCommand(ApplyShellProperties, true); }
+        }
+
         // Remove hardcode of shell type and add dynamically
 
         public ICommand SyncPropertiesCommand
@@ -51,6 +55,47 @@ namespace EtabsModelConverterPlugin.ViewModels
             }
             EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsUls);
 
+            foreach (var slabULS in SlabsUls)
+            {
+                if (!ObjectFactoryMethods.SlabsSynced(slabULS, SlabsSls))
+                {
+                    slabULS.PropertyName = slabULS.AppendSectionName(slabULS.PropertyName, "-SLS");
+                    SlabsSls.Add(slabULS);
+                }
+            }
+            EtabsMethods.CreateSlabElementInETABS(ActiveModel, SlabsSls);
+
+            foreach (var slabSLS in SlabsSls)
+            {
+                if (!ObjectFactoryMethods.SlabsSynced(slabSLS, SlabsUls))
+                {
+                    slabSLS.PropertyName = slabSLS.AppendSectionName(slabSLS.PropertyName, "-SLS");
+                    SlabsUls.Add(slabSLS);
+                }
+            }
+            EtabsMethods.CreateSlabElementInETABS(ActiveModel, SlabsUls);
+
+            foreach (var dropULS in dropPanelsUls)
+            {
+                if (!ObjectFactoryMethods.DropsSynced(dropULS, DropPanelsSls))
+                {
+                    dropULS.PropertyName = dropULS.AppendSectionName(dropULS.PropertyName, "-SLS");
+                    DropPanelsSls.Add(dropULS);
+                }
+            }
+            EtabsMethods.CreateDropElementInETABS(ActiveModel, DropPanelsSls);
+
+            foreach (var dropSLS in dropPanelsSls)
+            {
+                if (!ObjectFactoryMethods.DropsSynced(dropSLS, DropPanelsUls))
+                {
+                    dropSLS.PropertyName = dropSLS.AppendSectionName(dropSLS.PropertyName, "-SLS");
+                    DropPanelsUls.Add(dropSLS);
+                }
+            }
+            EtabsMethods.CreateDropElementInETABS(ActiveModel, DropPanelsUls);
+
+
         }
 
         private void ApplyFrameProperties()
@@ -68,6 +113,25 @@ namespace EtabsModelConverterPlugin.ViewModels
             };
 
             ActiveModel.SapModel.PropFrame.SetModifiers(SelectedFrame.PropertyName, ref propertyModifiers);
+        }
+
+        private void ApplyShellProperties()
+        {
+            double[] propertyModifiers = new double[]
+            {
+                SelectedShell.PropertyModifiers.F11,
+                SelectedShell.PropertyModifiers.F22,
+                SelectedShell.PropertyModifiers.F12,
+                SelectedShell.PropertyModifiers.M11,
+                SelectedShell.PropertyModifiers.M22,
+                SelectedShell.PropertyModifiers.M12,
+                SelectedShell.PropertyModifiers.V13,
+                SelectedShell.PropertyModifiers.V23,
+                SelectedShell.PropertyModifiers.Mass,
+                SelectedShell.PropertyModifiers.Weight
+            };
+
+            ActiveModel.SapModel.PropArea.SetModifiers(SelectedFrame.PropertyName, ref propertyModifiers);
         }
     }
 }

@@ -336,13 +336,27 @@ namespace EtabsModelConverterPlugin.Helpers
             }
         }
 
-
-
         public static void CreateWallElementInETABS(EtabsAPI activeModel, ObservableCollection<Wall> wallsToAdd)
         {
             foreach(var wall in wallsToAdd)
             {
                 activeModel.SapModel.PropArea.SetWall(wall.PropertyName, eWallPropType.AutoSelectList, eShellType.ShellThin, wall.Material.Name, wall.Thickness);
+            }
+        }
+
+        public static void CreateSlabElementInETABS(EtabsAPI activeModel, ObservableCollection<Slab> slabsToAdd)
+        {
+            foreach (var slab in slabsToAdd)
+            {
+                activeModel.SapModel.PropArea.SetSlab(slab.PropertyName, eSlabType.Slab, eShellType.ShellThin, slab.Material.Name, slab.Thickness);
+            }
+        }
+
+        public static void CreateDropElementInETABS(EtabsAPI activeModel, ObservableCollection<DropPanel> dropsToAdd)
+        {
+            foreach (var drop in dropsToAdd)
+            {
+                activeModel.SapModel.PropArea.SetSlab(drop.PropertyName, eSlabType.Drop, eShellType.ShellThin, drop.Material.Name, drop.Thickness);
             }
         }
 

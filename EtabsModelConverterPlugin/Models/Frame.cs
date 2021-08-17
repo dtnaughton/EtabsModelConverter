@@ -13,5 +13,12 @@ namespace EtabsModelConverterPlugin.Models
         public FramePropertyModifiers PropertyModifiers { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
+
+        public Frame(string propertyName, FramePropertyModifiers framePropertyModifiers, IMaterial material, double width, double height) : base(propertyName, material)
+        {
+            PropertyModifiers = framePropertyModifiers;
+            Width = width;
+            Height = height;
+        }
     }
 }

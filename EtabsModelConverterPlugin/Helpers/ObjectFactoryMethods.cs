@@ -69,13 +69,17 @@ namespace EtabsModelConverterPlugin.Helpers
         //    };
         //}
 
-        public static ObservableCollection<Column> CreateColumns(EtabsAPI activeModel, List<string> columnNames)
+        public static ObservableCollection<Column> CreateMultipleColumns(EtabsAPI activeModel, List<string> columnNames)
         {
             var columns = new ObservableCollection<Column>();
 
             foreach (var columnName in columnNames)
             {
-                columns.Add(CreateColumn(activeModel, columnName));
+                columns.Add(new Column(
+                    columnName,
+                    EtabsMethods.GetFramePropertyModifiers(activeModel, columnName),
+
+                    );
             }
 
             return columns;
@@ -117,6 +121,62 @@ namespace EtabsModelConverterPlugin.Helpers
                 string sectionName = wall.StripSectionName(wall.PropertyName);
 
                 var matches = listOfWalls.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+
+                return matches.Count() > 0;
+            }
+
+            return true;
+        }
+
+        public static bool SlabsSynced(Slab slab, ObservableCollection<Slab> listOfSlabs)
+        {
+            if (listOfSlabs != null)
+            {
+                string sectionName = slab.StripSectionName(slab.PropertyName);
+
+                var matches = listOfSlabs.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+
+                return matches.Count() > 0;
+            }
+
+            return true;
+        }
+
+        public static bool DropsSynced(DropPanel dropPanel, ObservableCollection<DropPanel> listOfDropPanels)
+        {
+            if (listOfDropPanels != null)
+            {
+                string sectionName = dropPanel.StripSectionName(dropPanel.PropertyName);
+
+                var matches = listOfDropPanels.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+
+                return matches.Count() > 0;
+            }
+
+            return true;
+        }
+
+        public static bool ColumnsSynced(Column column, ObservableCollection<Column> listOfColumns)
+        {
+            if (listOfColumns != null)
+            {
+                string sectionName = column.StripSectionName(column.PropertyName);
+
+                var matches = listOfColumns.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+
+                return matches.Count() > 0;
+            }
+
+            return true;
+        }
+
+        public static bool BeamsSynced(Beam beam, ObservableCollection<Beam> listOfBeams)
+        {
+            if (listOfBeams != null)
+            {
+                string sectionName = beam.StripSectionName(beam.PropertyName);
+
+                var matches = listOfBeams.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
 
                 return matches.Count() > 0;
             }

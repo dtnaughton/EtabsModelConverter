@@ -13,6 +13,12 @@ namespace EtabsModelConverterPlugin.Models
         public SectionType SectionType { get; set; }
         public IMaterial Material { get; set; }
 
+        public Section(string propertyName, IMaterial material)
+        {
+            PropertyName = propertyName;
+            Material = material;
+        }
+
         public string AppendSectionName(string originalName, string textToAppend)
         {
             return StripSectionName(originalName) + textToAppend;

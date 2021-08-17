@@ -12,11 +12,9 @@ namespace EtabsModelConverterPlugin.Models
         public ShellPropertyModifiers PropertyModifiers { get; set; }
         public double Thickness { get; set; }
 
-        public Shell(string propertyName, ShellPropertyModifiers shellPropertyModifiers, IMaterial material, double thickness)
+        public Shell(string propertyName, ShellPropertyModifiers shellPropertyModifiers, IMaterial material, double thickness) : base(propertyName, material)
         {
-            PropertyName = propertyName;
             PropertyModifiers = shellPropertyModifiers;
-            Material = material;
             Thickness = thickness;
         }
     }

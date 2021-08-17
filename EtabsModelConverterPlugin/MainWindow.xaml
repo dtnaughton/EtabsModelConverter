@@ -170,7 +170,7 @@
                                                  PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyShellPropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>
@@ -324,7 +324,7 @@
                                                  PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyShellPropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>
@@ -478,7 +478,7 @@
                                                  PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyShellPropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>
@@ -905,7 +905,7 @@
                                                  PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyShellPropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>
@@ -1059,7 +1059,7 @@
                                                  PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyShellPropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>
@@ -1213,7 +1213,7 @@
                                                  PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
                                     </Grid>
                                 </Grid>
-                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right">Apply Modifiers</Button>
+                                <Button Grid.Row="1" Width="115" Height="24" Margin="3" HorizontalAlignment="Right" Command="{Binding ApplyShellPropertiesCommand}">Apply Modifiers</Button>
                             </Grid>
 
                         </Grid>

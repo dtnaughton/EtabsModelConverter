@@ -41,8 +41,8 @@ namespace EtabsModelConverterPlugin.ViewModels
             WallsSls = ObjectFactoryMethods.CreateMultipleWalls(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetWallNames(ActiveModel), "SLS"));
             DropPanelsUls = ObjectFactoryMethods.CreateMultipleDropPanels(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetDropNames(ActiveModel), "ULS"));
             DropPanelsSls = ObjectFactoryMethods.CreateMultipleDropPanels(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetDropNames(ActiveModel), "SLS"));
-            ColumnsUls = ObjectFactoryMethods.CreateColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "ULS"));
-            ColumnsSls = ObjectFactoryMethods.CreateColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "SLS"));
+            ColumnsUls = ObjectFactoryMethods.CreateMultipleColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "ULS"));
+            ColumnsSls = ObjectFactoryMethods.CreateMultipleColumns(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetColumnNames(ActiveModel), "SLS"));
             BeamsUls = ObjectFactoryMethods.CreateBeams(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetBeamNames(ActiveModel), "ULS"));
             BeamsSls = ObjectFactoryMethods.CreateBeams(ActiveModel, EtabsMethods.FilterNames(EtabsMethods.GetBeamNames(ActiveModel), "SLS"));
             IsULS = EtabsMethods.AreUlsPropertiesApplied(ActiveModel);

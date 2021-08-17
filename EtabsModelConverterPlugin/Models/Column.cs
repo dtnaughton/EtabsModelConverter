@@ -8,5 +8,9 @@ namespace EtabsModelConverterPlugin.Models
 {
     public class Column : Frame
     {
+        public Column(string propertyName, FramePropertyModifiers framePropertyModifiers, double width, double height) : base(propertyName, framePropertyModifiers, width, height)
+        {
+            SectionType = SectionType.Column;
+        }
     }
 }
