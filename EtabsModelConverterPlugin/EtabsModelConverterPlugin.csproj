@@ -80,6 +80,7 @@
     <Compile Include="Models\EtabsAPI.cs" />
     <Compile Include="Models\Frame.cs" />
     <Compile Include="Models\FramePropertyModifiers.cs" />
+    <Compile Include="Models\Geometry.cs" />
     <Compile Include="Models\IFrame.cs" />
     <Compile Include="Models\IMaterial.cs" />
     <Compile Include="Models\IPropertyModifiers.cs" />

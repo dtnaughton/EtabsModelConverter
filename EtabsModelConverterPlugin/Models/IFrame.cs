@@ -3,7 +3,6 @@
     public interface IFrame
     {
         FramePropertyModifiers PropertyModifiers { get; set; }
-        double Width { get; set; }
-        double Height { get; set; }
+        Geometry Geometry { get; set; }
     }
 }

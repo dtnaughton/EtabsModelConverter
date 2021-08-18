@@ -39,8 +39,15 @@ namespace EtabsModelConverterPlugin.ViewModels
             {
                 if (!ObjectFactoryMethods.WallsSynced(wallULS, WallsSls))
                 {
-                    wallULS.PropertyName = wallULS.AppendSectionName(wallULS.PropertyName, "-SLS");
-                    WallsSls.Add(wallULS);
+                    WallsSls.Add(new Wall
+                        (
+                            wallULS.AppendSectionName(wallULS.PropertyName, "-SLS"),
+                            wallULS.PropertyModifiers,
+                            wallULS.Material,
+                            wallULS.Thickness
+                        ));
+
+                    WallsSls.OrderBy(x => x.Thickness);
                 }
             }
             EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsSls);
@@ -49,8 +56,15 @@ namespace EtabsModelConverterPlugin.ViewModels
             {
                 if (!ObjectFactoryMethods.WallsSynced(wallSLS, WallsUls))
                 {
-                    wallSLS.PropertyName = wallSLS.AppendSectionName(wallSLS.PropertyName, "-ULS");
-                    WallsUls.Add(wallSLS);
+                    WallsUls.Add(new Wall
+                        (
+                            wallSLS.AppendSectionName(wallSLS.PropertyName, "-ULS"),
+                            wallSLS.PropertyModifiers,
+                            wallSLS.Material,
+                            wallSLS.Thickness
+                        ));
+
+                    WallsUls.OrderBy(x => x.Thickness);
                 }
             }
             EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsUls);
@@ -59,8 +73,15 @@ namespace EtabsModelConverterPlugin.ViewModels
             {
                 if (!ObjectFactoryMethods.SlabsSynced(slabULS, SlabsSls))
                 {
-                    slabULS.PropertyName = slabULS.AppendSectionName(slabULS.PropertyName, "-SLS");
-                    SlabsSls.Add(slabULS);
+                    SlabsSls.Add(new Slab
+                        (
+                            slabULS.AppendSectionName(slabULS.PropertyName, "-SLS"),
+                            slabULS.PropertyModifiers,
+                            slabULS.Material,
+                            slabULS.Thickness
+                        ));
+
+                    SlabsSls.OrderBy(x => x.Thickness);
                 }
             }
             EtabsMethods.CreateSlabElementInETABS(ActiveModel, SlabsSls);
@@ -69,33 +90,119 @@ namespace EtabsModelConverterPlugin.ViewModels
             {
                 if (!ObjectFactoryMethods.SlabsSynced(slabSLS, SlabsUls))
                 {
-                    slabSLS.PropertyName = slabSLS.AppendSectionName(slabSLS.PropertyName, "-SLS");
-                    SlabsUls.Add(slabSLS);
+                    SlabsUls.Add(new Slab
+                        (
+                            slabSLS.AppendSectionName(slabSLS.PropertyName, "-ULS"),
+                            slabSLS.PropertyModifiers,
+                            slabSLS.Material,
+                            slabSLS.Thickness
+                        ));
+
+                    SlabsUls.OrderBy(x => x.Thickness);
+
                 }
             }
             EtabsMethods.CreateSlabElementInETABS(ActiveModel, SlabsUls);
 
-            foreach (var dropULS in dropPanelsUls)
+            foreach (var dropULS in DropPanelsUls)
             {
                 if (!ObjectFactoryMethods.DropsSynced(dropULS, DropPanelsSls))
                 {
-                    dropULS.PropertyName = dropULS.AppendSectionName(dropULS.PropertyName, "-SLS");
-                    DropPanelsSls.Add(dropULS);
+                    DropPanelsSls.Add(new DropPanel
+                        (
+                            dropULS.AppendSectionName(dropULS.PropertyName, "-SLS"),
+                            dropULS.PropertyModifiers,
+                            dropULS.Material,
+                            dropULS.Thickness
+                        ));
+                    DropPanelsSls.OrderBy(x => x.Thickness);
                 }
             }
             EtabsMethods.CreateDropElementInETABS(ActiveModel, DropPanelsSls);
 
-            foreach (var dropSLS in dropPanelsSls)
+            foreach (var dropSLS in DropPanelsSls)
             {
                 if (!ObjectFactoryMethods.DropsSynced(dropSLS, DropPanelsUls))
                 {
-                    dropSLS.PropertyName = dropSLS.AppendSectionName(dropSLS.PropertyName, "-SLS");
-                    DropPanelsUls.Add(dropSLS);
+                    DropPanelsUls.Add(new DropPanel
+                        (
+                            dropSLS.AppendSectionName(dropSLS.PropertyName, "-ULS"),
+                            dropSLS.PropertyModifiers,
+                            dropSLS.Material,
+                            dropSLS.Thickness
+                        ));
+                    DropPanelsUls.OrderBy(x => x.Thickness);
                 }
             }
             EtabsMethods.CreateDropElementInETABS(ActiveModel, DropPanelsUls);
 
+            foreach (var beamULS in BeamsUls)
+            {
+                if (!ObjectFactoryMethods.BeamsSynced(beamULS, BeamsSls))
+                {
+                    BeamsSls.Add(new Beam
+                        (
+                            beamULS.AppendSectionName(beamULS.PropertyName, "-SLS"),
+                            beamULS.PropertyModifiers,
+                            beamULS.Material,
+                            beamULS.Geometry
+                        ));
+                    BeamsSls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
 
+                }
+            }
+            EtabsMethods.CreateBeamElementInETABS(ActiveModel, BeamsSls);
+
+            foreach (var beamSLS in BeamsSls)
+            {
+                if (!ObjectFactoryMethods.BeamsSynced(beamSLS, BeamsUls))
+                {
+                    BeamsUls.Add(new Beam
+                        (
+                            beamSLS.AppendSectionName(beamSLS.PropertyName, "-ULS"),
+                            beamSLS.PropertyModifiers,
+                            beamSLS.Material,
+                            beamSLS.Geometry
+                        ));
+                    BeamsUls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
+
+                }
+            }
+            EtabsMethods.CreateBeamElementInETABS(ActiveModel, BeamsUls);
+
+            foreach (var columnULS in ColumnsUls)
+            {
+                if (!ObjectFactoryMethods.ColumnsSynced(columnULS, ColumnsSls))
+                {
+                    ColumnsSls.Add(new Column
+                        (
+                            columnULS.AppendSectionName(columnULS.PropertyName, "-SLS"),
+                            columnULS.PropertyModifiers,
+                            columnULS.Material,
+                            columnULS.Geometry
+                        ));
+                    ColumnsSls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
+
+                }
+            }
+            EtabsMethods.CreateColumnElementInETABS(ActiveModel, ColumnsSls);
+
+            foreach (var columnSLS in ColumnsSls)
+            {
+                if (!ObjectFactoryMethods.ColumnsSynced(columnSLS, ColumnsUls))
+                {
+                    ColumnsUls.Add(new Column
+                        (
+                            columnSLS.AppendSectionName(columnSLS.PropertyName, "-ULS"),
+                            columnSLS.PropertyModifiers,
+                            columnSLS.Material,
+                            columnSLS.Geometry
+                        ));
+                    ColumnsUls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
+
+                }
+            }
+            EtabsMethods.CreateColumnElementInETABS(ActiveModel, ColumnsUls);
         }
 
         private void ApplyFrameProperties()

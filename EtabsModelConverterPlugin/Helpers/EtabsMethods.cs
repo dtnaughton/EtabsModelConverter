@@ -212,6 +212,20 @@ namespace EtabsModelConverterPlugin.Helpers
             return new ConcreteMaterial() { Name = materialPropertyName };
         }
 
+        public static Geometry GetFrameGeometry(EtabsAPI activeModel, string frameName)
+        {
+            string fileName, matProp, notes, gUID;
+            double t3, t2, area, as2, as3, torsion, i22, i33, s22, s33, z22, z33, r22, r33;
+            int color = 0;
+
+            fileName = matProp = notes = gUID = "";
+            t3 = t2 = area = as2 = as3 = torsion = i22 = i33 = s22 = s33 = z22 = z33 = r22 = r33 = 0;
+
+            activeModel.SapModel.PropFrame.GetGeneral(frameName, ref fileName, ref matProp, ref t3, ref t2, ref area, ref as2, ref as3, ref torsion, ref i22, ref i33, ref s22, ref s33, ref z22, ref z33, ref r22, ref r33, ref color, ref notes, ref gUID);
+
+            return new Geometry() { Height = t2, Width = t3 };
+        }
+
         public static double GetSlabThickness(EtabsAPI activeModel, string shellName)
         {
             eSlabType slabType = new eSlabType();
@@ -360,11 +374,19 @@ namespace EtabsModelConverterPlugin.Helpers
             }
         }
 
-        public static void CreateFrameElementInETABS(EtabsAPI activeModel, List<Frame> framesToAdd)
+        public static void CreateBeamElementInETABS(EtabsAPI activeModel, ObservableCollection<Beam> framesToAdd)
         {
             foreach(var frame in framesToAdd)
             {
+                int i = activeModel.SapModel.PropFrame.SetRectangle(frame.PropertyName, frame.Material.Name, frame.Geometry.Height, frame.Geometry.Width);
+            }
+        }
 
+        public static void CreateColumnElementInETABS(EtabsAPI activeModel, ObservableCollection<Column> framesToAdd)
+        {
+            foreach (var frame in framesToAdd)
+            {
+                int i = activeModel.SapModel.PropFrame.SetRectangle(frame.PropertyName, frame.Material.Name, frame.Geometry.Height, frame.Geometry.Width);
             }
         }
     }
