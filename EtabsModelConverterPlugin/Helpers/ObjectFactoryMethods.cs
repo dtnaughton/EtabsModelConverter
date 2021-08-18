@@ -161,5 +161,39 @@ namespace EtabsModelConverterPlugin.Helpers
 
             return true;
         }
+
+        public static ObservableCollection<Wall> SortWalls(ObservableCollection<Wall> walls)
+        {
+            var obj = walls.OrderBy(x => x.Thickness);
+
+            return new ObservableCollection<Wall>(obj);
+        }
+
+        public static ObservableCollection<Slab> SortSlabs(ObservableCollection<Slab> slabs)
+        {
+            var obj = slabs.OrderBy(x => x.Thickness);
+
+            return new ObservableCollection<Slab>(obj);
+        }
+        public static ObservableCollection<DropPanel> SortDrops(ObservableCollection<DropPanel> drops)
+        {
+            var obj = drops.OrderBy(x => x.Thickness);
+
+            return new ObservableCollection<DropPanel>(obj);
+        }
+
+        public static ObservableCollection<Column> SortColumns(ObservableCollection<Column> columns)
+        {
+            var obj = columns.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
+
+            return new ObservableCollection<Column>(obj);
+        }
+
+        public static ObservableCollection<Beam> SortBeams(ObservableCollection<Beam> beams)
+        {
+            var obj = beams.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
+
+            return new ObservableCollection<Beam>(obj);
+        }
     }
 }

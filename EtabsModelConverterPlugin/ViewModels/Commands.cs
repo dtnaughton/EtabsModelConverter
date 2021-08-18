@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,9 +48,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             wallULS.Thickness
                         ));
 
-                    WallsSls.OrderBy(x => x.Thickness);
                 }
             }
+            WallsSls = ObjectFactoryMethods.SortWalls(WallsSls);
             EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsSls);
 
             foreach (var wallSLS in WallsSls)
@@ -64,9 +65,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             wallSLS.Thickness
                         ));
 
-                    WallsUls.OrderBy(x => x.Thickness);
                 }
             }
+            WallsUls = ObjectFactoryMethods.SortWalls(WallsUls);
             EtabsMethods.CreateWallElementInETABS(ActiveModel, WallsUls);
 
             foreach (var slabULS in SlabsUls)
@@ -80,10 +81,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             slabULS.Material,
                             slabULS.Thickness
                         ));
-
-                    SlabsSls.OrderBy(x => x.Thickness);
                 }
             }
+            SlabsSls = ObjectFactoryMethods.SortSlabs(SlabsSls);
             EtabsMethods.CreateSlabElementInETABS(ActiveModel, SlabsSls);
 
             foreach (var slabSLS in SlabsSls)
@@ -97,11 +97,10 @@ namespace EtabsModelConverterPlugin.ViewModels
                             slabSLS.Material,
                             slabSLS.Thickness
                         ));
-
-                    SlabsUls.OrderBy(x => x.Thickness);
-
                 }
             }
+            SlabsUls = ObjectFactoryMethods.SortSlabs(SlabsUls);
+
             EtabsMethods.CreateSlabElementInETABS(ActiveModel, SlabsUls);
 
             foreach (var dropULS in DropPanelsUls)
@@ -115,9 +114,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             dropULS.Material,
                             dropULS.Thickness
                         ));
-                    DropPanelsSls.OrderBy(x => x.Thickness);
                 }
             }
+            DropPanelsSls = ObjectFactoryMethods.SortDrops(DropPanelsSls);
             EtabsMethods.CreateDropElementInETABS(ActiveModel, DropPanelsSls);
 
             foreach (var dropSLS in DropPanelsSls)
@@ -131,9 +130,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             dropSLS.Material,
                             dropSLS.Thickness
                         ));
-                    DropPanelsUls.OrderBy(x => x.Thickness);
                 }
             }
+            DropPanelsUls = ObjectFactoryMethods.SortDrops(DropPanelsUls);
             EtabsMethods.CreateDropElementInETABS(ActiveModel, DropPanelsUls);
 
             foreach (var beamULS in BeamsUls)
@@ -147,10 +146,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             beamULS.Material,
                             beamULS.Geometry
                         ));
-                    BeamsSls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
-
                 }
             }
+            BeamsSls = ObjectFactoryMethods.SortBeams(BeamsSls);
             EtabsMethods.CreateBeamElementInETABS(ActiveModel, BeamsSls);
 
             foreach (var beamSLS in BeamsSls)
@@ -164,10 +162,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             beamSLS.Material,
                             beamSLS.Geometry
                         ));
-                    BeamsUls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
-
                 }
             }
+            BeamsUls = ObjectFactoryMethods.SortBeams(BeamsUls);
             EtabsMethods.CreateBeamElementInETABS(ActiveModel, BeamsUls);
 
             foreach (var columnULS in ColumnsUls)
@@ -181,10 +178,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             columnULS.Material,
                             columnULS.Geometry
                         ));
-                    ColumnsSls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
-
                 }
             }
+            ColumnsSls = ObjectFactoryMethods.SortColumns(ColumnsSls);
             EtabsMethods.CreateColumnElementInETABS(ActiveModel, ColumnsSls);
 
             foreach (var columnSLS in ColumnsSls)
@@ -198,10 +194,9 @@ namespace EtabsModelConverterPlugin.ViewModels
                             columnSLS.Material,
                             columnSLS.Geometry
                         ));
-                    ColumnsUls.OrderBy(x => x.Geometry.Width).ThenBy(y => y.Geometry.Height);
-
                 }
             }
+            ColumnsUls = ObjectFactoryMethods.SortColumns(ColumnsUls);
             EtabsMethods.CreateColumnElementInETABS(ActiveModel, ColumnsUls);
         }
 
