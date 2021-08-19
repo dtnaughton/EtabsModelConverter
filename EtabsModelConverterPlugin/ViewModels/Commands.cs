@@ -176,7 +176,8 @@ namespace EtabsModelConverterPlugin.ViewModels
                             columnULS.AppendSectionName(columnULS.PropertyName, "-SLS"),
                             columnULS.PropertyModifiers,
                             columnULS.Material,
-                            columnULS.Geometry
+                            columnULS.Geometry,
+                            columnULS.Shape
                         ));
                 }
             }
@@ -192,12 +193,29 @@ namespace EtabsModelConverterPlugin.ViewModels
                             columnSLS.AppendSectionName(columnSLS.PropertyName, "-ULS"),
                             columnSLS.PropertyModifiers,
                             columnSLS.Material,
-                            columnSLS.Geometry
+                            columnSLS.Geometry,
+                            columnSLS.Shape
                         ));
                 }
             }
             ColumnsUls = ObjectFactoryMethods.SortColumns(ColumnsUls);
             EtabsMethods.CreateColumnElementInETABS(ActiveModel, ColumnsUls);
+        }
+
+        /// <summary>
+        /// Applies ULS or SLS properties to all objects in model
+        /// </summary>
+        private void ApplyULSorSLSParameters()
+        {
+            if (IsULS)
+            {
+                EtabsMethods.AssignPropertiesToEtabs(ActiveModel, BeamsUls, ColumnsUls);
+            }
+
+            else
+            {
+                EtabsMethods.AssignPropertiesToEtabs(ActiveModel, BeamsSls, ColumnsSls);
+            }
         }
 
         private void ApplyFrameProperties()

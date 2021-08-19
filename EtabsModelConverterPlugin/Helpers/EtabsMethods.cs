@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace EtabsModelConverterPlugin.Helpers
 {
@@ -22,12 +23,12 @@ namespace EtabsModelConverterPlugin.Helpers
 
             foreach (var name in areaNames)
             {
-                if(name.ToLower().StartsWith("s") && VerifySlabAssignment(activeModel, name))
+                if (name.ToLower().StartsWith("s") && VerifySlabAssignment(activeModel, name))
                 {
                     slabNames.Add(name);
                 }
             }
-            
+
             return slabNames;
         }
         public static List<string> GetWallNames(EtabsAPI activeModel)
@@ -77,7 +78,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
             var beamNames = new List<string>();
 
-            foreach(var name in frameNames)
+            foreach (var name in frameNames)
             {
                 if (name.ToLower().StartsWith("b"))
                 {
@@ -212,16 +213,24 @@ namespace EtabsModelConverterPlugin.Helpers
             return new ConcreteMaterial() { Name = materialPropertyName };
         }
 
-        public static Geometry GetFrameGeometry(EtabsAPI activeModel, string frameName)
+        public static Geometry GetFrameGeometry(EtabsAPI activeModel, string frameName, ColumnType columnType)
         {
             string fileName, matProp, notes, gUID;
-            double t3, t2, area, as2, as3, torsion, i22, i33, s22, s33, z22, z33, r22, r33;
+            double t3, t2;
             int color = 0;
 
             fileName = matProp = notes = gUID = "";
-            t3 = t2 = area = as2 = as3 = torsion = i22 = i33 = s22 = s33 = z22 = z33 = r22 = r33 = 0;
+            t3 = t2 = 0;
 
-            activeModel.SapModel.PropFrame.GetGeneral(frameName, ref fileName, ref matProp, ref t3, ref t2, ref area, ref as2, ref as3, ref torsion, ref i22, ref i33, ref s22, ref s33, ref z22, ref z33, ref r22, ref r33, ref color, ref notes, ref gUID);
+            if (columnType == ColumnType.Circle)
+            {
+                activeModel.SapModel.PropFrame.GetCircle(frameName, ref fileName, ref matProp, ref t3, ref color, ref notes, ref gUID);
+            }
+
+            else
+            {
+                activeModel.SapModel.PropFrame.GetRectangle(frameName, ref fileName, ref matProp, ref t3, ref t2, ref color, ref notes, ref gUID);
+            }
 
             return new Geometry() { Height = t2, Width = t3 };
         }
@@ -270,6 +279,21 @@ namespace EtabsModelConverterPlugin.Helpers
 
             // Returns true if naming convention followed e.g. W200-SLS
             return words.Length == 1 ? false : name.Split('-').Last().ToLower().StartsWith("s");
+        }
+
+        /// <summary>
+        /// Determines if column is rectangular or circular
+        /// </summary>
+        /// <param name="activeModel"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        public static ColumnType GetColumnType(EtabsAPI activeModel, string columnName)
+        {
+            eFramePropType columnType = new eFramePropType();
+
+            activeModel.SapModel.PropFrame.GetTypeOAPI(columnName, ref columnType);
+
+            return columnType == eFramePropType.Circle ? ColumnType.Circle : ColumnType.Rectangle;
         }
 
         // Verify that user assignment of slab is correct and there is no discrepancy between naming slab convention and property assignment
@@ -335,7 +359,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
 
 
-            if(numberOfAreas > 0)
+            if (numberOfAreas > 0)
             {
                 string propName = "";
 
@@ -352,7 +376,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
         public static void CreateWallElementInETABS(EtabsAPI activeModel, ObservableCollection<Wall> wallsToAdd)
         {
-            foreach(var wall in wallsToAdd)
+            foreach (var wall in wallsToAdd)
             {
                 activeModel.SapModel.PropArea.SetWall(wall.PropertyName, eWallPropType.AutoSelectList, eShellType.ShellThin, wall.Material.Name, wall.Thickness);
             }
@@ -376,7 +400,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
         public static void CreateBeamElementInETABS(EtabsAPI activeModel, ObservableCollection<Beam> framesToAdd)
         {
-            foreach(var frame in framesToAdd)
+            foreach (var frame in framesToAdd)
             {
                 int i = activeModel.SapModel.PropFrame.SetRectangle(frame.PropertyName, frame.Material.Name, frame.Geometry.Height, frame.Geometry.Width);
             }
@@ -387,6 +411,34 @@ namespace EtabsModelConverterPlugin.Helpers
             foreach (var frame in framesToAdd)
             {
                 int i = activeModel.SapModel.PropFrame.SetRectangle(frame.PropertyName, frame.Material.Name, frame.Geometry.Height, frame.Geometry.Width);
+            }
+        }
+
+        public static void AssignPropertiesToEtabs(EtabsAPI activeModel, ObservableCollection<Beam> beams, ObservableCollection<Column> columns)
+        {
+            int numberOfFrames = 0;
+            string[] frameNames, propertyNames, storyNames, point1Names, point2Names;
+            frameNames = propertyNames = storyNames = point1Names = point2Names = new string[1];
+            double[] point1x, point1y, point1z, point2x, point2y, point2z, angle, offset1x, offset2x, offset1y, offset2y, offset1z, offset2z;
+            point1x = point1y = point1z = point2x = point2y = point2z = angle = offset1x = offset2x = offset1y = offset2y = offset1z = offset2z = new double[1];
+            int[] cardinalPoints = new int[1];
+
+            activeModel.SapModel.FrameObj.GetAllFrames(ref numberOfFrames, ref frameNames, ref propertyNames, ref storyNames, ref point1Names, ref point2Names, ref point1x, ref point1y, ref point1z, ref point2x, ref point2y, ref point2z, ref angle, ref offset1x, ref offset2x, ref offset1y, ref offset2y, ref offset1z, ref offset2z, ref cardinalPoints);
+
+            for (int i = 0; i < numberOfFrames; i++)
+            {
+                if (propertyNames[i].ToLower().StartsWith("b"))
+                {
+                    var beamToAssign = beams.Find(x => x.PropertyName == propertyNames[i]);
+
+                    if(beamToAssign == null)
+                    {
+                        MessageBox.Show("Section is not defined. Ensure sections are synced.");
+                        return;
+                    }
+
+                    activeModel.SapModel.FrameObj.SetSection(frameNames[i], beamToAssign.PropertyName);
+                }
             }
         }
     }

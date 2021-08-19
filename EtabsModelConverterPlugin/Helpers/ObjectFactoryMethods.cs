@@ -67,7 +67,8 @@ namespace EtabsModelConverterPlugin.Helpers
                     columnName,
                     EtabsMethods.GetFramePropertyModifiers(activeModel, columnName),
                     EtabsMethods.GetFrameMaterial(activeModel, columnName),
-                    EtabsMethods.GetFrameGeometry(activeModel, columnName)
+                    EtabsMethods.GetFrameGeometry(activeModel, columnName, EtabsMethods.GetColumnType(activeModel, columnName)),
+                    EtabsMethods.GetColumnType(activeModel, columnName)
                     ));
             }
 
@@ -85,7 +86,7 @@ namespace EtabsModelConverterPlugin.Helpers
                     beamName,
                     EtabsMethods.GetFramePropertyModifiers(activeModel, beamName),
                     EtabsMethods.GetFrameMaterial(activeModel, beamName),
-                    EtabsMethods.GetFrameGeometry(activeModel, beamName)
+                    EtabsMethods.GetFrameGeometry(activeModel, beamName, ColumnType.Rectangle)
                     ));
             }
 

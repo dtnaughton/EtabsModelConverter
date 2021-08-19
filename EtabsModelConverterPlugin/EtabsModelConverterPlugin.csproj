@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Models\Beam.cs" />
     <Compile Include="Models\Column.cs" />
+    <Compile Include="Models\ColumnType.cs" />
     <Compile Include="Models\ConcreteMaterial.cs" />
     <Compile Include="Models\DropPanel.cs" />
     <Compile Include="Models\EtabsAPI.cs" />
