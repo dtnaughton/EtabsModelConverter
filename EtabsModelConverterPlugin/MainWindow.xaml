@@ -1509,7 +1509,7 @@
         <StackPanel Grid.Row="1" Height="30"  Orientation="Horizontal" HorizontalAlignment="Right">
             <RadioButton Content="ULS" VerticalAlignment="Center" Margin="0,0,20,0" IsChecked="{Binding IsULS}"/>
             <RadioButton Content="SLS" VerticalAlignment="Center" Margin="0,0,20,0" IsChecked="{Binding IsSLS}"/>
-            <Button Width="100" Margin="3">Apply</Button>
+            <Button Width="100" Margin="3" Command="{Binding ApplyULSOrSLSParametersCommand}">Apply</Button>
         </StackPanel>
     </Grid>
 </Window>

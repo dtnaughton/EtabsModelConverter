@@ -34,6 +34,11 @@ namespace EtabsModelConverterPlugin.ViewModels
             get { return new RelayCommand(SyncProperties, true); }
         }
 
+        public ICommand ApplyULSOrSLSParametersCommand
+        {
+            get { return new RelayCommand(ApplyULSorSLSParameters, true); }
+        }
+
         private void SyncProperties()
         {
             foreach (var wallULS in WallsUls)

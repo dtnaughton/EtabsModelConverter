@@ -4,5 +4,6 @@
     {
         FramePropertyModifiers PropertyModifiers { get; set; }
         Geometry Geometry { get; set; }
+        string UniqueName { get; set; }
     }
 }

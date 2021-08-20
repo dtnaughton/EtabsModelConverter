@@ -368,6 +368,12 @@ namespace EtabsModelConverterPlugin.Helpers
                 return IsPropertyULS(propName);
             }
 
+            // No areas in model
+            else if (numberOfAreas == 0)
+            {
+
+            }
+
             else
             {
                 return false;
@@ -429,16 +435,38 @@ namespace EtabsModelConverterPlugin.Helpers
             {
                 if (propertyNames[i].ToLower().StartsWith("b"))
                 {
-                    var beamToAssign = beams.Find(x => x.PropertyName == propertyNames[i]);
+                    var matchingBeams = beams.Where(x => x.PropertyName == beams[0].StripSectionName(propertyNames[i]));
 
-                    if(beamToAssign == null)
+                    if(matchingBeams == null)
                     {
                         MessageBox.Show("Section is not defined. Ensure sections are synced.");
                         return;
                     }
 
-                    activeModel.SapModel.FrameObj.SetSection(frameNames[i], beamToAssign.PropertyName);
+                    activeModel.SapModel.FrameObj.SetSection(frameNames[i], matchingBeams.FirstOrDefault().PropertyName);
                 }
+            }
+        }
+
+        public static List<Frame> GetAllFramesInModel(EtabsAPI activeModel)
+        {
+            int numberOfFrames = 0;
+            string[] frameNames, propertyNames, storyNames, point1Names, point2Names;
+            frameNames = propertyNames = storyNames = point1Names = point2Names = new string[1];
+            double[] point1x, point1y, point1z, point2x, point2y, point2z, angle, offset1x, offset2x, offset1y, offset2y, offset1z, offset2z;
+            point1x = point1y = point1z = point2x = point2y = point2z = angle = offset1x = offset2x = offset1y = offset2y = offset1z = offset2z = new double[1];
+            int[] cardinalPoints = new int[1];
+
+            activeModel.SapModel.FrameObj.GetAllFrames(ref numberOfFrames, ref frameNames, ref propertyNames, ref storyNames, ref point1Names, ref point2Names, ref point1x, ref point1y, ref point1z, ref point2x, ref point2y, ref point2z, ref angle, ref offset1x, ref offset2x, ref offset1y, ref offset2y, ref offset1z, ref offset2z, ref cardinalPoints);
+
+            List<Frame> frames = new List<Frame>();
+
+            for (int i = 0; i < numberOfFrames; i++)
+            {
+                frames.Add(new Frame(
+                    frameNames[i],
+                    propertyNames[i]
+                    ));
             }
         }
     }

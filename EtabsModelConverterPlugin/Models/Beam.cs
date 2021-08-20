@@ -12,5 +12,10 @@ namespace EtabsModelConverterPlugin.Models
         {
             SectionType = SectionType.Beam;
         }
+
+        public Beam(string uniqueName, string propertyName) : base(uniqueName, propertyName)
+        {
+
+        }
     }
 }
