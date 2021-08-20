@@ -34,11 +34,12 @@ namespace EtabsModelConverterPlugin.Models
         /// </summary>
         /// <param name="fullName"></param>
         /// <returns></returns>
-        public string StripSectionName(string fullName)
+        public static string StripSectionName(string fullName)
         {
             string[] words = fullName.Split('-');
 
             return words.First();
         }
+
     }
 }

@@ -363,15 +363,28 @@ namespace EtabsModelConverterPlugin.Helpers
             {
                 string propName = "";
 
-                activeModel.SapModel.AreaObj.GetProperty(areaNames[0], ref propName);
+                activeModel.SapModel.AreaObj.GetProperty(areaNames.FirstOrDefault(), ref propName);
 
                 return IsPropertyULS(propName);
             }
 
-            // No areas in model
+            // No areas in model, check for columns
             else if (numberOfAreas == 0)
             {
+                List<Column> columns = GetAssignedColumnsInModel(activeModel);
 
+                if(columns.Count() != 0)
+                {
+                    return IsPropertyULS(columns.FirstOrDefault().PropertyName);
+                }
+                
+                // No columns in model, check for beams
+                else
+                {
+                    List<Beam> beams = GetAssignedBeamsInModel(activeModel);
+
+                    return beams != null ? IsPropertyULS(beams.FirstOrDefault().PropertyName) : false;
+                }
             }
 
             else
@@ -420,7 +433,13 @@ namespace EtabsModelConverterPlugin.Helpers
             }
         }
 
-        public static void AssignPropertiesToEtabs(EtabsAPI activeModel, ObservableCollection<Beam> beams, ObservableCollection<Column> columns)
+        public static void AssignPropertiesToEtabs(EtabsAPI activeModel, ObservableCollection<Beam> beams, ObservableCollection<Column> columns, ObservableCollection<Slab> slabs, ObservableCollection<DropPanel> dropPanels, ObservableCollection<Wall> walls)
+        {
+            AssignFramesToEtabs(activeModel, beams, columns);
+            AssignAreasToEtabs(activeModel, slabs, dropPanels, walls);
+        }
+
+        public static void AssignFramesToEtabs(EtabsAPI activeModel, ObservableCollection<Beam> beams, ObservableCollection<Column> columns)
         {
             int numberOfFrames = 0;
             string[] frameNames, propertyNames, storyNames, point1Names, point2Names;
@@ -435,9 +454,18 @@ namespace EtabsModelConverterPlugin.Helpers
             {
                 if (propertyNames[i].ToLower().StartsWith("b"))
                 {
-                    var matchingBeams = beams.Where(x => x.PropertyName == beams[0].StripSectionName(propertyNames[i]));
+                    List<Beam> matchingBeams = new List<Beam>();
 
-                    if(matchingBeams == null)
+                    foreach (var beam in beams)
+                    {
+                        if (Section.StripSectionName(beam.PropertyName) == Section.StripSectionName(propertyNames[i]))
+                        {
+                            matchingBeams.Add(beam);
+                        }
+                    }
+
+                    // If ULS and SLS sections not synced, list will not populate
+                    if (matchingBeams.Count() == 0)
                     {
                         MessageBox.Show("Section is not defined. Ensure sections are synced.");
                         return;
@@ -445,10 +473,96 @@ namespace EtabsModelConverterPlugin.Helpers
 
                     activeModel.SapModel.FrameObj.SetSection(frameNames[i], matchingBeams.FirstOrDefault().PropertyName);
                 }
+
+                else
+                {
+                    List<Column> matchingColumns = new List<Column>();
+
+                    foreach (var column in columns)
+                    {
+                        if (Section.StripSectionName(column.PropertyName) == Section.StripSectionName(propertyNames[i]))
+                        {
+                            matchingColumns.Add(column);
+                        }
+                    }
+
+                    // If ULS and SLS sections not synced, list will not populate
+                    if (matchingColumns.Count() == 0)
+                    {
+                        MessageBox.Show("Section is not defined. Ensure sections are synced.");
+                        return;
+                    }
+
+                    activeModel.SapModel.FrameObj.SetSection(frameNames[i], matchingColumns.FirstOrDefault().PropertyName);
+                }
             }
         }
 
-        public static List<Frame> GetAllFramesInModel(EtabsAPI activeModel)
+        public static void AssignAreasToEtabs(EtabsAPI activeModel, ObservableCollection<Slab> slabs, ObservableCollection<DropPanel> dropPanels, ObservableCollection<Wall> walls)
+        {
+            int numberOfAreas, numberOfBoundaryPts;
+            string[] areaNames, pointNames;
+            eAreaDesignOrientation[] designOrientation = new eAreaDesignOrientation[1];
+            int[] pointDelimiter;
+            double[] pointX, pointY, pointZ;
+
+            numberOfAreas = numberOfBoundaryPts = 0;
+            areaNames = pointNames = new string[1];
+            pointDelimiter = new int[1];
+            pointX = pointY = pointZ = new double[1];
+
+            activeModel.SapModel.AreaObj.GetAllAreas(ref numberOfAreas, ref areaNames, ref designOrientation, ref numberOfBoundaryPts, ref pointDelimiter, ref pointNames, ref pointX, ref pointY, ref pointZ);
+
+            for (int i = 0; i < numberOfAreas; i++)
+            {
+                string propertyName = "";
+                activeModel.SapModel.AreaObj.GetProperty(areaNames[i], ref propertyName);
+
+                if (propertyName.ToLower().StartsWith("s"))
+                {
+                    List<Slab> matchingSlabs = new List<Slab>();
+
+                    foreach(var slab in slabs)
+                    {
+                        if(slab.PropertyName == propertyName)
+                        {
+                            matchingSlabs.Add(slab);
+                        }
+                    }
+                    activeModel.SapModel.AreaObj.SetProperty(areaNames[i], matchingSlabs.FirstOrDefault().PropertyName);
+                }
+
+                else if (propertyName.ToLower().StartsWith("d"))
+                {
+                    List<DropPanel> matchingDrops = new List<DropPanel>();
+
+                    foreach (var drop in dropPanels)
+                    {
+                        if (drop.PropertyName == propertyName)
+                        {
+                            matchingDrops.Add(drop);
+                        }
+                    }
+                    activeModel.SapModel.AreaObj.SetProperty(areaNames[i], matchingDrops.FirstOrDefault().PropertyName);
+                }
+
+                else
+                {
+                    List <Wall> matchingWalls = new List<Wall>();
+
+                    foreach (var wall in walls)
+                    {
+                        if (wall.PropertyName == propertyName)
+                        {
+                            matchingWalls.Add(wall);
+                        }
+                    }
+                    activeModel.SapModel.AreaObj.SetProperty(areaNames[i], matchingWalls.FirstOrDefault().PropertyName);
+                }
+            }
+        }
+
+        public static List<Beam> GetAssignedBeamsInModel(EtabsAPI activeModel)
         {
             int numberOfFrames = 0;
             string[] frameNames, propertyNames, storyNames, point1Names, point2Names;
@@ -459,16 +573,81 @@ namespace EtabsModelConverterPlugin.Helpers
 
             activeModel.SapModel.FrameObj.GetAllFrames(ref numberOfFrames, ref frameNames, ref propertyNames, ref storyNames, ref point1Names, ref point2Names, ref point1x, ref point1y, ref point1z, ref point2x, ref point2y, ref point2z, ref angle, ref offset1x, ref offset2x, ref offset1y, ref offset2y, ref offset1z, ref offset2z, ref cardinalPoints);
 
-            List<Frame> frames = new List<Frame>();
+            List<Beam> beams = new List<Beam>();
 
             for (int i = 0; i < numberOfFrames; i++)
             {
-                frames.Add(new Frame(
+                if (propertyNames[i].ToLower().StartsWith("b"))
+                {
+                    beams.Add(new Beam(
                     frameNames[i],
                     propertyNames[i]
                     ));
+                }
             }
+
+            return beams;
         }
+
+        public static List<Column> GetAssignedColumnsInModel(EtabsAPI activeModel)
+        {
+            int numberOfFrames = 0;
+            string[] frameNames, propertyNames, storyNames, point1Names, point2Names;
+            frameNames = propertyNames = storyNames = point1Names = point2Names = new string[1];
+            double[] point1x, point1y, point1z, point2x, point2y, point2z, angle, offset1x, offset2x, offset1y, offset2y, offset1z, offset2z;
+            point1x = point1y = point1z = point2x = point2y = point2z = angle = offset1x = offset2x = offset1y = offset2y = offset1z = offset2z = new double[1];
+            int[] cardinalPoints = new int[1];
+
+            activeModel.SapModel.FrameObj.GetAllFrames(ref numberOfFrames, ref frameNames, ref propertyNames, ref storyNames, ref point1Names, ref point2Names, ref point1x, ref point1y, ref point1z, ref point2x, ref point2y, ref point2z, ref angle, ref offset1x, ref offset2x, ref offset1y, ref offset2y, ref offset1z, ref offset2z, ref cardinalPoints);
+
+            List<Column> columns = new List<Column>();
+
+            for (int i = 0; i < numberOfFrames; i++)
+            {
+                if (propertyNames[i].ToLower().StartsWith("c"))
+                    {
+                    columns.Add(new Column(
+                    frameNames[i],
+                    propertyNames[i]
+                    ));
+                }
+            }
+
+            return columns;
+        }
+
+        //public static List<Slab> GetAssignedSlabsInModel(EtabsAPI activeModel)
+        //{
+        //    int numberOfAreas, numberOfBoundaryPts;
+        //    string[] areaNames, pointNames;
+        //    eAreaDesignOrientation[] designOrientation = new eAreaDesignOrientation[1];
+        //    int[] pointDelimiter;
+        //    double[] pointX, pointY, pointZ;
+
+        //    numberOfAreas = numberOfBoundaryPts = 0;
+        //    areaNames = pointNames = new string[1];
+        //    pointDelimiter = new int[1];
+        //    pointX = pointY = pointZ = new double[1];
+
+        //    activeModel.SapModel.AreaObj.GetAllAreas(ref numberOfAreas, ref areaNames, ref designOrientation, ref numberOfBoundaryPts, ref pointDelimiter, ref pointNames, ref pointX, ref pointY, ref pointZ);
+
+        //    List<Slab> slabs = new List<Slab>();
+
+        //    for (int i = 0; i < numberOfAreas; i++)
+        //    {
+        //        if (areaNames[i].ToLower().StartsWith("S"))
+        //        {
+        //            string propertyName = "";
+
+        //            activeModel.SapModel.AreaObj.GetProperty(areaNames[i], ref propertyName);
+        //            slabs.Add(new Slab(
+        //                areaNames[0],
+        //                propertyName
+        //                ));
+        //        }
+        //    }
+        //    return slabs;
+        //}
     }
 }
 

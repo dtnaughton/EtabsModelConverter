@@ -13,5 +13,10 @@ namespace EtabsModelConverterPlugin.Models
         {
             SectionType = SectionType.Drop;
         }
+
+        public DropPanel(string uniqueName, string propertyName) : base(uniqueName, propertyName)
+        {
+
+        }
     }
 }

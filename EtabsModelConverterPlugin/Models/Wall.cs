@@ -13,5 +13,10 @@ namespace EtabsModelConverterPlugin.Models
         {
             SectionType = SectionType.Wall;
         }
+
+        public Wall(string uniqueName, string propertyName) : base(uniqueName, propertyName)
+        {
+
+        }
     }
 }

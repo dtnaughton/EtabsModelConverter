@@ -13,5 +13,10 @@ namespace EtabsModelConverterPlugin.Models
         {
             SectionType = SectionType.Slab;
         }
+
+        public Slab(string uniqueName, string propertyName) : base(uniqueName, propertyName)
+        {
+
+        }
     }
 }

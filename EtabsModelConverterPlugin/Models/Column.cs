@@ -15,5 +15,10 @@ namespace EtabsModelConverterPlugin.Models
             SectionType = SectionType.Column;
             Shape = shape;
         }
+
+        public Column(string uniqueName, string propertyName) : base(uniqueName, propertyName)
+        {
+
+        }
     }
 }

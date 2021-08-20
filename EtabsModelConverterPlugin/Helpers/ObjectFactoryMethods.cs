@@ -97,9 +97,9 @@ namespace EtabsModelConverterPlugin.Helpers
         {
             if(listOfWalls != null)
             {
-                string sectionName = wall.StripSectionName(wall.PropertyName);
+                string sectionName = Section.StripSectionName(wall.PropertyName);
 
-                var matches = listOfWalls.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+                var matches = listOfWalls.Where(w => Section.StripSectionName(w.PropertyName) == sectionName);
 
                 return matches.Count() > 0;
             }
@@ -111,9 +111,9 @@ namespace EtabsModelConverterPlugin.Helpers
         {
             if (listOfSlabs != null)
             {
-                string sectionName = slab.StripSectionName(slab.PropertyName);
+                string sectionName = Section.StripSectionName(slab.PropertyName);
 
-                var matches = listOfSlabs.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+                var matches = listOfSlabs.Where(w => Section.StripSectionName(w.PropertyName) == sectionName);
 
                 return matches.Count() > 0;
             }
@@ -125,9 +125,9 @@ namespace EtabsModelConverterPlugin.Helpers
         {
             if (listOfDropPanels != null)
             {
-                string sectionName = dropPanel.StripSectionName(dropPanel.PropertyName);
+                string sectionName = Section.StripSectionName(dropPanel.PropertyName);
 
-                var matches = listOfDropPanels.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+                var matches = listOfDropPanels.Where(w => Section.StripSectionName(w.PropertyName) == sectionName);
 
                 return matches.Count() > 0;
             }
@@ -139,9 +139,9 @@ namespace EtabsModelConverterPlugin.Helpers
         {
             if (listOfColumns != null)
             {
-                string sectionName = column.StripSectionName(column.PropertyName);
+                string sectionName = Section.StripSectionName(column.PropertyName);
 
-                var matches = listOfColumns.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+                var matches = listOfColumns.Where(w => Section.StripSectionName(w.PropertyName) == sectionName);
 
                 return matches.Count() > 0;
             }
@@ -153,9 +153,9 @@ namespace EtabsModelConverterPlugin.Helpers
         {
             if (listOfBeams != null)
             {
-                string sectionName = beam.StripSectionName(beam.PropertyName);
+                string sectionName = Section.StripSectionName(beam.PropertyName);
 
-                var matches = listOfBeams.Where(w => w.StripSectionName(w.PropertyName) == sectionName);
+                var matches = listOfBeams.Where(w => Section.StripSectionName(w.PropertyName) == sectionName);
 
                 return matches.Count() > 0;
             }
