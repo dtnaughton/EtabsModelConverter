@@ -1,0 +1,3 @@
+C:\Users\naugh\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Release\MainWindow.g.cs
+C:\Users\naugh\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Release\EtabsModelConverterPlugin_MarkupCompile.cache
+C:\Users\naugh\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Release\EtabsModelConverterPlugin_MarkupCompile.lref

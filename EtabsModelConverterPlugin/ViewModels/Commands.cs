@@ -41,6 +41,7 @@ namespace EtabsModelConverterPlugin.ViewModels
 
         private void SyncProperties()
         {
+
             foreach (var wallULS in WallsUls)
             {
                 if (!ObjectFactoryMethods.WallsSynced(wallULS, WallsSls))
@@ -205,6 +206,8 @@ namespace EtabsModelConverterPlugin.ViewModels
             }
             ColumnsUls = ObjectFactoryMethods.SortColumns(ColumnsUls);
             EtabsMethods.CreateColumnElementInETABS(ActiveModel, ColumnsUls);
+
+
         }
 
         /// <summary>
@@ -214,13 +217,15 @@ namespace EtabsModelConverterPlugin.ViewModels
         {
             if (IsULS)
             {
-                EtabsMethods.AssignPropertiesToEtabs(ActiveModel, BeamsUls, ColumnsUls);
+                EtabsMethods.AssignPropertiesToEtabs(ActiveModel, BeamsUls, ColumnsUls, SlabsUls, DropPanelsUls, WallsUls);
             }
 
             else
             {
-                EtabsMethods.AssignPropertiesToEtabs(ActiveModel, BeamsSls, ColumnsSls);
+                EtabsMethods.AssignPropertiesToEtabs(ActiveModel, BeamsSls, ColumnsSls, SlabsSls, DropPanelsSls, WallsSls);
             }
+
+            ActiveModel.SapModel.View.RefreshView();
         }
 
         private void ApplyFrameProperties()
