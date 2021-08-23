@@ -20,7 +20,7 @@ namespace EtabsModelConverterPlugin
 
         public long Info(ref string Text)
         {
-            Text = "Speckle connector for ETABS";
+            Text = "Plugin to switch section properties between ULS and SLS";
             return 0;
         }
     }

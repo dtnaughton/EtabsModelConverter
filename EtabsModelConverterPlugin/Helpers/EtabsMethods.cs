@@ -524,7 +524,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
                     foreach(var slab in slabs)
                     {
-                        if(slab.PropertyName == propertyName)
+                        if(Section.StripSectionName(slab.PropertyName) == Section.StripSectionName(propertyName))
                         {
                             matchingSlabs.Add(slab);
                         }
@@ -538,7 +538,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
                     foreach (var drop in dropPanels)
                     {
-                        if (drop.PropertyName == propertyName)
+                        if (Section.StripSectionName(drop.PropertyName) == Section.StripSectionName(propertyName))
                         {
                             matchingDrops.Add(drop);
                         }
@@ -552,7 +552,7 @@ namespace EtabsModelConverterPlugin.Helpers
 
                     foreach (var wall in walls)
                     {
-                        if (wall.PropertyName == propertyName)
+                        if (Section.StripSectionName(wall.PropertyName) == Section.StripSectionName(propertyName))
                         {
                             matchingWalls.Add(wall);
                         }
@@ -615,39 +615,6 @@ namespace EtabsModelConverterPlugin.Helpers
 
             return columns;
         }
-
-        //public static List<Slab> GetAssignedSlabsInModel(EtabsAPI activeModel)
-        //{
-        //    int numberOfAreas, numberOfBoundaryPts;
-        //    string[] areaNames, pointNames;
-        //    eAreaDesignOrientation[] designOrientation = new eAreaDesignOrientation[1];
-        //    int[] pointDelimiter;
-        //    double[] pointX, pointY, pointZ;
-
-        //    numberOfAreas = numberOfBoundaryPts = 0;
-        //    areaNames = pointNames = new string[1];
-        //    pointDelimiter = new int[1];
-        //    pointX = pointY = pointZ = new double[1];
-
-        //    activeModel.SapModel.AreaObj.GetAllAreas(ref numberOfAreas, ref areaNames, ref designOrientation, ref numberOfBoundaryPts, ref pointDelimiter, ref pointNames, ref pointX, ref pointY, ref pointZ);
-
-        //    List<Slab> slabs = new List<Slab>();
-
-        //    for (int i = 0; i < numberOfAreas; i++)
-        //    {
-        //        if (areaNames[i].ToLower().StartsWith("S"))
-        //        {
-        //            string propertyName = "";
-
-        //            activeModel.SapModel.AreaObj.GetProperty(areaNames[i], ref propertyName);
-        //            slabs.Add(new Slab(
-        //                areaNames[0],
-        //                propertyName
-        //                ));
-        //        }
-        //    }
-        //    return slabs;
-        //}
     }
 }
 
