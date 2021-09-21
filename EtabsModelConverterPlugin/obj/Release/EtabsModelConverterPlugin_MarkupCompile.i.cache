@@ -4,16 +4,16 @@
 library
 C#
 .cs
-C:\Users\naugh\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Release\
+C:\Users\Daniel.Naughton\source\repos\EtabsModelConverter\EtabsModelConverterPlugin\obj\Release\
 EtabsModelConverterPlugin
 none
 false
-TRACE
+DEBUG;TRACE
 
 11151548125
 
 29-501393923
-126-947764767
+127-989912282
 MainWindow.xaml;
 
 False
